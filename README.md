@@ -1,8 +1,3 @@
-# Clone
-```bash
-git clone --recurse-submodules --remote-submodules -j8 git@github.com:alex-deus/srg_allalias.git srg
-```
-
 # Deploy
 ## Server
 ```bash
@@ -18,6 +13,7 @@ open https://hostname.com/admin/  # to login and set your company name
 ### Back
 - create virtualenv & install requirements
 ```bash
+cd back
 pyenv virtualenv 3.9.0 srg_back
 pyenv activate srg_back
 pip install poetry
@@ -38,4 +34,5 @@ cd front
 npm install
 npm run serve
 open http://localhost:8080
+npm run build
 ```
