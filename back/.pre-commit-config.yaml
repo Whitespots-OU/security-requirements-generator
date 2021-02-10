@@ -1,0 +1,23 @@
+repos:
+-   repo: https://github.com/Trim21/mirrors-autoflake
+    rev: v1.3.1
+    hooks:
+    -   id: autoflake
+        args: [
+            '--recursive',
+            '--in-place',
+            '--remove-all-unused-imports',
+            '--remove-duplicate-keys',
+            'apps/',
+            'project/',
+        ]
+-   repo: https://github.com/timothycrosley/isort
+    rev: 4.3.21-2
+    hooks:
+    -   id: isort
+        additional_dependencies: [toml]
+        files: ^apps/
+-   repo: https://github.com/psf/black
+    rev: 19.10b0
+    hooks:
+    -   id: black

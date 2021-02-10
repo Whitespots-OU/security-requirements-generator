@@ -1,0 +1,48 @@
+<!DOCTYPE html>{% load static i18n %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Whitespots.io - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header class="ml-auto mr-auto pr-md-0 pl-md-0">
+    <div class="container mt-3">
+        <div class="row justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <a href="/">
+                    <img src="{% static 'img/logo.svg' %}" alt="logo">
+                </a>
+                <div class="ml-3 logo-text d-none d-md-block">
+                    <a href="/">
+                        <div class="logo-title">Whitespots.io</div>
+                        <div class="logo-subtitle">Security requirements generator</div>
+                    </a>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mb-1">
+                {% get_current_language as LANGUAGE_CODE %}
+                <div class="mb-1">
+                    <a href="/en"><span class="languges {% if LANGUAGE_CODE == "en" %}languges-active{% endif %}">EN</span></a>
+                    <a href="/ru"><span class="languges {% if LANGUAGE_CODE == "ru" %}languges-active{% endif %}">RU</span></a>
+                </div>
+                <a href="https://whitespots.io/security-assessment" class="btn-outline-red pt-1 pb-1">
+                    {% trans "Security Assessment" %}
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="ml-auto mr-auto text-center">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</main>
+</body>
+</html>

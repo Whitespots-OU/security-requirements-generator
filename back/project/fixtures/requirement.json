@@ -1,0 +1,601 @@
+[
+  {
+    "model": "requirement.category",
+    "pk": 5,
+    "fields": {
+      "name": "Admin actions",
+      "name_en": "Admin actions",
+      "name_ru": "Администрирование",
+      "summary": "Critical actions/bulk data import/export",
+      "summary_en": "Critical actions/bulk data import/export",
+      "summary_ru": "Критичные действия/массовый импорт/экспорт данных",
+      "show_at_home": true,
+      "order": 5
+    }
+  },
+  {
+    "model": "requirement.category",
+    "pk": 6,
+    "fields": {
+      "name": "Paid integrations",
+      "name_en": "Paid integrations",
+      "name_ru": "Платные интеграции",
+      "summary": "Paid integrations (sending sms/push/emails/...)",
+      "summary_en": "Paid integrations (sending sms/push/emails/...)",
+      "summary_ru": "Платные интеграции (отправка смс/емейл/push/..)",
+      "show_at_home": true,
+      "order": 6
+    }
+  },
+  {
+    "model": "requirement.category",
+    "pk": 7,
+    "fields": {
+      "name": "Search engine indexation",
+      "name_en": "Search engine indexation",
+      "name_ru": "Поисковая индексация",
+      "summary": "Your app pages are listed in google",
+      "summary_en": "Your app pages are listed in google",
+      "summary_ru": "Страницы вашего приложения индексируются поисковыми роботами",
+      "show_at_home": true,
+      "order": 7
+    }
+  },
+  {
+    "model": "requirement.category",
+    "pk": 8,
+    "fields": {
+      "name": "Files upload",
+      "name_en": "Files upload",
+      "name_ru": "Загрузка файлов",
+      "summary": "Files upload functionality",
+      "summary_en": "Files upload functionality",
+      "summary_ru": "Функционал загрузки файлов",
+      "show_at_home": true,
+      "order": 8
+    }
+  },
+  {
+    "model": "requirement.category",
+    "pk": 9,
+    "fields": {
+      "name": "Websockets",
+      "name_en": "Websockets",
+      "name_ru": "Websockets",
+      "summary": "Websockets",
+      "summary_en": "Websockets",
+      "summary_ru": "Websockets",
+      "show_at_home": true,
+      "order": 9
+    }
+  },
+  {
+    "model": "requirement.category",
+    "pk": 10,
+    "fields": {
+      "name": "Authentication",
+      "name_en": "Authentication",
+      "name_ru": "Аутентификация",
+      "summary": "Your app has users",
+      "summary_en": "Your app has users",
+      "summary_ru": "У приложения есть пользователи",
+      "show_at_home": true,
+      "order": 10
+    }
+  },
+  {
+    "model": "requirement.category",
+    "pk": 11,
+    "fields": {
+      "name": "Authorization",
+      "name_en": "Authorization",
+      "name_ru": "Авторизация",
+      "summary": "Your users have different set of permissions",
+      "summary_en": "Your users have different set of permissions",
+      "summary_ru": "У ваших пользователей разный набор привилегий",
+      "show_at_home": true,
+      "order": 11
+    }
+  },
+  {
+    "model": "requirement.category",
+    "pk": 12,
+    "fields": {
+      "name": "General backend requirements",
+      "name_en": "General backend requirements",
+      "name_ru": "Общие требования для бэкенда",
+      "summary": "General backend requirements",
+      "summary_en": "General backend requirements",
+      "summary_ru": "Общие требования для бэкенда",
+      "show_at_home": true,
+      "order": 12
+    }
+  },
+  {
+    "model": "requirement.requirement",
+    "pk": 4,
+    "fields": {
+      "title": "2FA for administrators is set",
+      "title_en": "2FA for administrators is set",
+      "title_ru": "Второй фактор включен для администраторов",
+      "summary": "Administrative interfaces use multi-factor authentication to prevent unauthorized use",
+      "summary_en": "Administrative interfaces use multi-factor authentication to prevent unauthorized use",
+      "summary_ru": "Административные интерфейсы используют многофакторную аутентификацию для предотвращения несанкционированного использования",
+      "text": "Administrative interfaces use multi-factor authentication to prevent unauthorized use",
+      "text_en": "Administrative interfaces use multi-factor authentication to prevent unauthorized use",
+      "text_ru": "Административные интерфейсы используют многофакторную аутентификацию для предотвращения несанкционированного использования",
+      "order": 0,
+      "categories": [
+        5,
+        11
+      ],
+      "test_cases": []
+    }
+  },
+  {
+    "model": "requirement.requirement",
+    "pk": 5,
+    "fields": {
+      "title": "Authentication is enabled for administrative interfaces",
+      "title_en": "Authentication is enabled for administrative interfaces",
+      "title_ru": "Включена аутентификация для административных интерфейсов",
+      "summary": "Access to administration and management functions must be limited to authorized administrators",
+      "summary_en": "Access to administration and management functions must be limited to authorized administrators",
+      "summary_ru": "Доступ к административным интерфейсам и функциям должен быть только у авторизованных администраторов",
+      "text": "Access to administration and management functions must be limited to authorized administrators",
+      "text_en": "Access to administration and management functions must be limited to authorized administrators",
+      "text_ru": "Доступ к административным интерфейсам и функциям должен быть только у авторизованных администраторов",
+      "order": 0,
+      "categories": [
+        5
+      ],
+      "test_cases": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "requirement.requirement",
+    "pk": 6,
+    "fields": {
+      "title": "App uses unique default accounts",
+      "title_en": "App uses unique default accounts",
+      "title_ru": "Приложение использует уникальные стандартные аккаунты",
+      "summary": "Shared or default accounts are not present (e.g. \"root\", \"admin\", or \"sa\" that you can use somewhere else).",
+      "summary_en": "Shared or default accounts are not present (e.g. \"root\", \"admin\", or \"sa\" that you can use somewhere else).",
+      "summary_ru": "Общие/стандартные аккаунты не используются (прим. \"root\", \"admin\", или \"sa\" которые вы можете использовать где-либо ещё)",
+      "text": "Shared or default accounts are not present (e.g. \"root\", \"admin\", or \"sa\" that you can use somewhere else).",
+      "text_en": "Shared or default accounts are not present (e.g. \"root\", \"admin\", or \"sa\" that you can use somewhere else).",
+      "text_ru": "Общие/стандартные аккаунты не используются (прим. \"root\", \"admin\", или \"sa\" которые вы можете использовать где-либо ещё)",
+      "order": 0,
+      "categories": [
+        5
+      ],
+      "test_cases": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "requirement.requirement",
+    "pk": 7,
+    "fields": {
+      "title": "Administrator registration is disabled",
+      "title_en": "Administrator registration is disabled",
+      "title_ru": "Отключена регистрация в качестве администратора",
+      "summary": "There is no way to register as administrator",
+      "summary_en": "There is no way to register as administrator",
+      "summary_ru": "Нет способа зарегистрироваться как администратор",
+      "text": "There is no way to register as administrator",
+      "text_en": "There is no way to register as administrator",
+      "text_ru": "Нет способа зарегистрироваться как администратор",
+      "order": 0,
+      "categories": [
+        5,
+        11
+      ],
+      "test_cases": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "requirement.requirement",
+    "pk": 8,
+    "fields": {
+      "title": "Admin functions are moved to another microservice",
+      "title_en": "Admin functions are moved to another microservice",
+      "title_ru": "Административный функционал вынесен в отдельный микросервис",
+      "summary": "Admin functions are moved to another microservice",
+      "summary_en": "Admin functions are moved to another microservice",
+      "summary_ru": "Административный функционал вынесен в отдельный микросервис",
+      "text": "Admin functions are moved to another microservice",
+      "text_en": "Admin functions are moved to another microservice",
+      "text_ru": "Административный функционал вынесен в отдельный микросервис",
+      "order": 0,
+      "categories": [
+        5
+      ],
+      "test_cases": []
+    }
+  },
+  {
+    "model": "requirement.requirement",
+    "pk": 9,
+    "fields": {
+      "title": "Limits are set",
+      "title_en": "Limits are set",
+      "title_ru": "Установлены лимиты",
+      "summary": "* The application has appropriate limits for **specific business actions or transactions** which are correctly enforced on a per user basis. (Rate limits + Logical/global limits)\r\n* The application has sufficient anti-automation controls to detect and protect against data exfiltration, excessive business logic requests, excessive file uploads or denial of service attacks. (Anti DDOS/ReCaptcha/hCaptcha..)",
+      "summary_en": "* The application has appropriate limits for **specific business actions or transactions** which are correctly enforced on a per user basis. (Rate limits + Logical/global limits)\r\n* The application has sufficient anti-automation controls to detect and protect against data exfiltration, excessive business logic requests, excessive file uploads or denial of service attacks. (Anti DDOS/ReCaptcha/hCaptcha..)",
+      "summary_ru": "* Приложение имеет лимиты **для отдельных бизнес процессов или транзакций**, которые выполняются для каждого пользователя отдельно. \r\n* В приложении реализованы лимиты для обнаружения и защиты от автоматизированных атак по типу фильтрации данных, чрезмерного обращения к процессам бизнес логики, чрезмерной загрузки файлов или DOS (Anti DDOS/ReCaptcha/hCaptcha..)",
+      "text": "* The application has appropriate limits for **specific business actions or transactions** which are correctly enforced on a per user basis. (Rate limits + Logical/global limits)\r\n* The application has sufficient anti-automation controls to detect and protect against data exfiltration, excessive business logic requests, excessive file uploads or denial of service attacks. (Anti DDOS/ReCaptcha/hCaptcha..)",
+      "text_en": "* The application has appropriate limits for **specific business actions or transactions** which are correctly enforced on a per user basis. (Rate limits + Logical/global limits)\r\n* The application has sufficient anti-automation controls to detect and protect against data exfiltration, excessive business logic requests, excessive file uploads or denial of service attacks. (Anti DDOS/ReCaptcha/hCaptcha..)",
+      "text_ru": "* Приложение имеет лимиты **для отдельных бизнес процессов или транзакций**, которые выполняются для каждого пользователя отдельно. \r\n* В приложении реализованы лимиты для обнаружения и защиты от автоматизированных атак по типу фильтрации данных, чрезмерного обращения к процессам бизнес логики, чрезмерной загрузки файлов или DOS (Anti DDOS/ReCaptcha/hCaptcha..)",
+      "order": 0,
+      "categories": [
+        6,
+        8,
+        10
+      ],
+      "test_cases": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "requirement.requirement",
+    "pk": 10,
+    "fields": {
+      "title": "Backend generates random names for files",
+      "title_en": "Backend generates random names for files",
+      "title_ru": "Имена файлов на сервере сформированы случайным образом",
+      "summary": "The backend server should generate unique random names for files, so user can not control them.",
+      "summary_en": "The backend server should generate unique random names for files, so user can not control them.",
+      "summary_ru": "Бэкенд сервер должен генерировать уникальные и рандомные имена файлов, чтобы пользователь не мог их контроллировать",
+      "text": "The backend server should generate unique random names for files, so user can not control them.",
+      "text_en": "The backend server should generate unique random names for files, so user can not control them.",
+      "text_ru": "Бэкенд сервер должен генерировать уникальные и рандомные имена файлов, чтобы пользователь не мог их контроллировать",
+      "order": 0,
+      "categories": [
+        8
+      ],
+      "test_cases": [
+        5,
+        9
+      ]
+    }
+  },
+  {
+    "model": "requirement.requirement",
+    "pk": 11,
+    "fields": {
+      "title": "Use whitelists for symbols in user-input",
+      "title_en": "Use whitelists for symbols in user-input",
+      "title_ru": "Используйте белые списки разрешенных символов в user-input",
+      "summary": "* Filenames\r\n* Logins\r\n* Emails\r\n* Personal Data\r\n* ...",
+      "summary_en": "* Filenames\r\n* Logins\r\n* Emails\r\n* Personal Data\r\n* ...",
+      "summary_ru": "* Имена файлов\r\n* Логины\r\n* Emails\r\n* Персональные данные\r\n* ...",
+      "text": "* Filenames\r\n* Logins\r\n* Emails\r\n* Personal Data\r\n* ...",
+      "text_en": "* Filenames\r\n* Logins\r\n* Emails\r\n* Personal Data\r\n* ...",
+      "text_ru": "* Имена файлов\r\n* Логины\r\n* Emails\r\n* Персональные данные\r\n* ...",
+      "order": 0,
+      "categories": [
+        8,
+        9,
+        10
+      ],
+      "test_cases": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "requirement.requirement",
+    "pk": 12,
+    "fields": {
+      "title": "File extension is properly validated",
+      "title_en": "File extension is properly validated",
+      "title_ru": "Расширения файлов должным образом валидируются",
+      "summary": "* Extension is included in the list of allowed extensions regardless of register.  \r\n* Mime-type is included in the allowed extensions list (if your application accepts mime-type = octet-stream, proceed to the next checks)\r\n* Binary file header is included into the allowed file formats. (https://www.filesignatures.net/index.php?page=all)\r\n* Extension, mime-type and binary header are belong to same file type.\r\n* The file size does not exceed the allowed size.",
+      "summary_en": "* Extension is included in the list of allowed extensions regardless of register.  \r\n* Mime-type is included in the allowed extensions list (if your application accepts mime-type = octet-stream, proceed to the next checks)\r\n* Binary file header is included into the allowed file formats. (https://www.filesignatures.net/index.php?page=all)\r\n* Extension, mime-type and binary header are belong to same file type.\r\n* The file size does not exceed the allowed size.",
+      "summary_ru": "* Расширение входит в список разрешенных расширений независимо от регистра.\r\n* Mime-type входит в список разрешенных (если к вам в приложение должен прилетать mime-type = octet-stream, то переходите к следующим проверкам)\r\n* Бинарный заголовок файла входит в список разрешенных форматов файла. (https://www.filesignatures.net/index.php?page=all)\r\n* Расширение, mime-type и бинарный заголовок принадлежат одному типу файлов.\r\n* Размер файла не превышает допустимый размер.",
+      "text": "* Extension is included in the list of allowed extensions regardless of register.  \r\n* Mime-type is included in the allowed extensions list (if your application accepts mime-type = octet-stream, proceed to the next checks)\r\n* Binary file header is included into the allowed file formats. (https://www.filesignatures.net/index.php?page=all)\r\n* Extension, mime-type and binary header are belong to same file type.\r\n* The file size does not exceed the allowed size.",
+      "text_en": "* Extension is included in the list of allowed extensions regardless of register.  \r\n* Mime-type is included in the allowed extensions list (if your application accepts mime-type = octet-stream, proceed to the next checks)\r\n* Binary file header is included into the allowed file formats. (https://www.filesignatures.net/index.php?page=all)\r\n* Extension, mime-type and binary header are belong to same file type.\r\n* The file size does not exceed the allowed size.",
+      "text_ru": "* Расширение входит в список разрешенных расширений независимо от регистра.\r\n* Mime-type входит в список разрешенных (если к вам в приложение должен прилетать mime-type = octet-stream, то переходите к следующим проверкам)\r\n* Бинарный заголовок файла входит в список разрешенных форматов файла. (https://www.filesignatures.net/index.php?page=all)\r\n* Расширение, mime-type и бинарный заголовок принадлежат одному типу файлов.\r\n* Размер файла не превышает допустимый размер.",
+      "order": 0,
+      "categories": [
+        8
+      ],
+      "test_cases": [
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "requirement.requirement",
+    "pk": 13,
+    "fields": {
+      "title": "Strict server-side control",
+      "title_en": "Strict server-side control",
+      "title_ru": "Строгий контроль на стороне бэкенда",
+      "summary": "All client-side data checks must be duplicated on the server side.\r\nThe frontend is not considered trusted at all.\r\nApplies to **any security mechanism**.\r\n\r\n**Example of over-trusting the client**:\r\nClient -> Server: User makes a payment and sends `amount=1$` for apple\r\n\r\n**Problem**:\r\nThe server does not check the real value of the item and can be fooled by an attacker\r\n\r\n**Fix example**:\r\nClient -> Server: User makes a payment and sends `transactionid=1kj3g421jk6gf235hg6fj253hg6j235`\r\nServer -> Client: Apple costs $100, not $1",
+      "summary_en": "All client-side data checks must be duplicated on the server side.\r\nThe frontend is not considered trusted at all.\r\nApplies to **any security mechanism**.\r\n\r\n**Example of over-trusting the client**:\r\nClient -> Server: User makes a payment and sends `amount=1$` for apple\r\n\r\n**Problem**:\r\nThe server does not check the real value of the item and can be fooled by an attacker\r\n\r\n**Fix example**:\r\nClient -> Server: User makes a payment and sends `transactionid=1kj3g421jk6gf235hg6fj253hg6j235`\r\nServer -> Client: Apple costs $100, not $1",
+      "summary_ru": "Все проверки данных на стороне клиента должны дублироваться на стороне сервера.\r\nФронтенд вообще не считается доверенным.\r\nКасается **любых механизмов защиты**\r\n\r\n**Пример излишнего доверия клиенту**:\r\nКлиент -> Сервер: Пользователь совершает оплату и отправляет `amount=1$` за яблоко\r\n\r\n**Проблема**:\r\nСервер не проверяет реальную стоимость товара и может быть обманут злоумышленником\r\n\r\n**Пример исправления**:\r\nКлиент -> Сервер: Пользователь совершает оплату по транзакции `transactionid=1kj3g421jk6gf235hg6fj253hg6j235`\r\nСервер -> Клиент: Яблоко стоит 100$, а не 1$",
+      "text": "All client-side data checks must be duplicated on the server side.\r\nThe frontend is not considered trusted at all.\r\nApplies to **any security mechanism**.\r\n\r\n**Example of over-trusting the client**:\r\nClient -> Server: User makes a payment and sends `amount=1$` for apple\r\n\r\n**Problem**:\r\nThe server does not check the real value of the item and can be fooled by an attacker\r\n\r\n**Fix example**:\r\nClient -> Server: User makes a payment and sends `transactionid=1kj3g421jk6gf235hg6fj253hg6j235`\r\nServer -> Client: Apple costs $100, not $1",
+      "text_en": "All client-side data checks must be duplicated on the server side.\r\nThe frontend is not considered trusted at all.\r\nApplies to **any security mechanism**.\r\n\r\n**Example of over-trusting the client**:\r\nClient -> Server: User makes a payment and sends `amount=1$` for apple\r\n\r\n**Problem**:\r\nThe server does not check the real value of the item and can be fooled by an attacker\r\n\r\n**Fix example**:\r\nClient -> Server: User makes a payment and sends `transactionid=1kj3g421jk6gf235hg6fj253hg6j235`\r\nServer -> Client: Apple costs $100, not $1",
+      "text_ru": "Все проверки данных на стороне клиента должны дублироваться на стороне сервера.\r\nФронтенд вообще не считается доверенным.\r\nКасается **любых механизмов защиты**\r\n\r\n**Пример излишнего доверия клиенту**:\r\nКлиент -> Сервер: Пользователь совершает оплату и отправляет `amount=1$` за яблоко\r\n\r\n**Проблема**:\r\nСервер не проверяет реальную стоимость товара и может быть обманут злоумышленником\r\n\r\n**Пример исправления**:\r\nКлиент -> Сервер: Пользователь совершает оплату по транзакции `transactionid=1kj3g421jk6gf235hg6fj253hg6j235`\r\nСервер -> Клиент: Яблоко стоит 100$, а не 1$",
+      "order": 0,
+      "categories": [
+        6,
+        8,
+        12
+      ],
+      "test_cases": []
+    }
+  },
+  {
+    "model": "requirement.requirement",
+    "pk": 14,
+    "fields": {
+      "title": "Server does not accept Session IDs from url parameters",
+      "title_en": "Server does not accept Session IDs from url parameters",
+      "title_ru": null,
+      "summary": "Such sessions can leak via referer header/proxy logs/browser history/cached pages.\r\nSession IDs should be stored in cookies with all security flags.",
+      "summary_en": "Such sessions can leak via referer header/proxy logs/browser history/cached pages.\r\nSession IDs should be stored in cookies with all security flags.",
+      "summary_ru": "Такие сессии могут утечь через заголовок referer/прокси-логи/историю браузера/кэшированные страницы.\r\nИдентификаторы сессий должны храниться в куках со всеми флагами безопасности.",
+      "text": "Such sessions can leak via referer header/proxy logs/browser history/cached pages.\r\nSession IDs should be stored in cookies with all security flags.",
+      "text_en": "Such sessions can leak via referer header/proxy logs/browser history/cached pages.\r\nSession IDs should be stored in cookies with all security flags.",
+      "text_ru": "Такие сессии могут утечь через заголовок referer/прокси-логи/историю браузера/кэшированные страницы.\r\nИдентификаторы сессий должны храниться в куках со всеми флагами безопасности.",
+      "order": 0,
+      "categories": [
+        5,
+        7,
+        10
+      ],
+      "test_cases": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "requirement.requirement",
+    "pk": 15,
+    "fields": {
+      "title": "Hide private pages from search engines",
+      "title_en": "Hide private pages from search engines",
+      "title_ru": null,
+      "summary": "Hide private pages from search engines by inserting meta-tag to them:\r\n`<meta name=\"robots\" content=\"noindex\">`\r\n[Full guide by Google](https://developers.google.com/search/docs/advanced/crawling/block-indexing)",
+      "summary_en": "Hide private pages from search engines by inserting meta-tag to them:\r\n`<meta name=\"robots\" content=\"noindex\">`\r\n[Full guide by Google](https://developers.google.com/search/docs/advanced/crawling/block-indexing)",
+      "summary_ru": "Спрячьте приватные страницы от индексации добавив на них следующий код:\r\n`<meta name=\"robots\" content=\"noindex\">`\r\n[Полный гайд от Google](https://developers.google.com/search/docs/advanced/crawling/block-indexing)",
+      "text": "Hide private pages from search engines by inserting meta-tag to them:\r\n`<meta name=\"robots\" content=\"noindex\">`\r\n[Full guide by Google](https://developers.google.com/search/docs/advanced/crawling/block-indexing)",
+      "text_en": "Hide private pages from search engines by inserting meta-tag to them:\r\n`<meta name=\"robots\" content=\"noindex\">`\r\n[Full guide by Google](https://developers.google.com/search/docs/advanced/crawling/block-indexing)",
+      "text_ru": "Спрячьте приватные страницы от индексации добавив на них следующий код:\r\n`<meta name=\"robots\" content=\"noindex\">`\r\n[Полный гайд от Google](https://developers.google.com/search/docs/advanced/crawling/block-indexing)",
+      "order": 0,
+      "categories": [
+        5,
+        7,
+        10,
+        11
+      ],
+      "test_cases": []
+    }
+  },
+  {
+    "model": "requirement.requirement",
+    "pk": 16,
+    "fields": {
+      "title": "For session cookies all flags are set to secure values",
+      "title_en": "For session cookies all flags are set to secure values",
+      "title_ru": "Для сессий все куки флаги установлены в безопасные значения",
+      "summary": "* SameSite=Lax/Strict (to protect them from CSRF)\r\n* secure (to protect them from MiTM)\r\n* httponly (to protect them from XSS)",
+      "summary_en": "* SameSite=Lax/Strict (to protect them from CSRF)\r\n* secure (to protect them from MiTM)\r\n* httponly (to protect them from XSS)",
+      "summary_ru": "* SameSite=Lax/Strict (для их защиты от CSRF)\r\n* secure (для их защиты от MiTM)\r\n* httponly (для их защиты от XSS)",
+      "text": "* SameSite=Lax/Strict (to protect them from CSRF)\r\n* secure (to protect them from MiTM)\r\n* httponly (to protect them from XSS)",
+      "text_en": "* SameSite=Lax/Strict (to protect them from CSRF)\r\n* secure (to protect them from MiTM)\r\n* httponly (to protect them from XSS)",
+      "text_ru": "* SameSite=Lax/Strict (для их защиты от CSRF)\r\n* secure (для их защиты от MiTM)\r\n* httponly (для их защиты от XSS)",
+      "order": 0,
+      "categories": [
+        5,
+        9,
+        10
+      ],
+      "test_cases": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "requirement.requirement",
+    "pk": 17,
+    "fields": {
+      "title": "Origin header values are whitelisted",
+      "title_en": "Origin header values are whitelisted",
+      "title_ru": null,
+      "summary": "Front-end domains should be whitelisted for origin header values.\r\nIt will help you to stay secure from websockets hijacking, CORS, postMessage leaks and other attacks.",
+      "summary_en": "Front-end domains should be whitelisted for origin header values.\r\nIt will help you to stay secure from websockets hijacking, CORS, postMessage leaks and other attacks.",
+      "summary_ru": "Внешние домены должны быть занесены в белый список для значений заголовка origin.\r\nЭто поможет вам обезопасить себя от перехвата веб-сокетов, CORS, утечек через postMessage и других атак.",
+      "text": "Front-end domains should be whitelisted for origin header values.\r\nIt will help you to stay secure from websockets hijacking, CORS, postMessage leaks and other attacks.",
+      "text_en": "Front-end domains should be whitelisted for origin header values.\r\nIt will help you to stay secure from websockets hijacking, CORS, postMessage leaks and other attacks.",
+      "text_ru": "Внешние домены должны быть занесены в белый список для значений заголовка origin.\r\nЭто поможет вам обезопасить себя от перехвата веб-сокетов, CORS, утечек через postMessage и других атак.",
+      "order": 0,
+      "categories": [
+        5,
+        9,
+        10,
+        11
+      ],
+      "test_cases": [
+        12
+      ]
+    }
+  },
+  {
+    "model": "requirement.requirement",
+    "pk": 18,
+    "fields": {
+      "title": "Security headers are set",
+      "title_en": "Security headers are set",
+      "title_ru": null,
+      "summary": "Set security headers from [this page](https://https://infosec.mozilla.org/guidelines/web_security) \r\n\r\nRequired are:\r\n* Content Security Policy\r\n* X-Frame-Options if you don't like the `frame-ancestors` CSP directive\r\n* Cookie flags\r\n* CORS",
+      "summary_en": "Set security headers from [this page](https://https://infosec.mozilla.org/guidelines/web_security) \r\n\r\nRequired are:\r\n* Content Security Policy\r\n* X-Frame-Options if you don't like the `frame-ancestors` CSP directive\r\n* Cookie flags\r\n* CORS",
+      "summary_ru": "Установите заголовки безопасности [с этой страницы](https://https://infosec.mozilla.org/guidelines/web_security) \r\n\r\nОбязательными являются:\r\n* Content Security Policy\r\n* X-Frame-Options если вам не нравится CSP директива `frame-ancestors`\r\n* Cookie flags\r\n* CORS",
+      "text": "Set security headers from [this page](https://https://infosec.mozilla.org/guidelines/web_security) \r\n\r\nRequired are:\r\n* Content Security Policy\r\n* X-Frame-Options if you don't like the `frame-ancestors` CSP directive\r\n* Cookie flags\r\n* CORS",
+      "text_en": "Set security headers from [this page](https://https://infosec.mozilla.org/guidelines/web_security) \r\n\r\nRequired are:\r\n* Content Security Policy\r\n* X-Frame-Options if you don't like the `frame-ancestors` CSP directive\r\n* Cookie flags\r\n* CORS",
+      "text_ru": "Установите заголовки безопасности [с этой страницы](https://https://infosec.mozilla.org/guidelines/web_security) \r\n\r\nОбязательными являются:\r\n* Content Security Policy\r\n* X-Frame-Options если вам не нравится CSP директива `frame-ancestors`\r\n* Cookie flags\r\n* CORS",
+      "order": 0,
+      "categories": [
+        12
+      ],
+      "test_cases": [
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "model": "requirement.testcase",
+    "pk": 1,
+    "fields": {
+      "title": "Try to register in your application",
+      "title_en": "Try to register in your application",
+      "title_ru": "Попробуйте зарегистрироваться в вашем приложении",
+      "text": "## Steps to reproduce:\r\n1. Go to the register interface\r\nIf you can not find it - replace \"/login\" to \"/register\" or \"/signup\" in your address bar.\r\n2. Register\r\n\r\n## Expected results:\r\n* You can not access the registration interface\r\n* Registration is failed",
+      "text_en": "## Steps to reproduce:\r\n1. Go to the register interface\r\nIf you can not find it - replace \"/login\" to \"/register\" or \"/signup\" in your address bar.\r\n2. Register\r\n\r\n## Expected results:\r\n* You can not access the registration interface\r\n* Registration is failed",
+      "text_ru": "## Шаги для воспроизведения:\r\n1. Откройте страничку с регистрацией\r\nЕсли вы не можете найти такую - замените \"/login\" на \"/register\" или \"/signup\" в адресной строке.\r\n2. Регистрируйтесь\r\n\r\n## Ожидаемый результат:\r\n* Вы не можете получить доступ к страничке регистрации\r\n* Регистрация завершена с ошибкой"
+    }
+  },
+  {
+    "model": "requirement.testcase",
+    "pk": 2,
+    "fields": {
+      "title": "Check default credentials",
+      "title_en": "Check default credentials",
+      "title_ru": "Проверьте стандартные учетные записи",
+      "text": "## Steps to reproduce:\r\n1. Go to the login interface\r\n2. Enter \"admin\" as login and \"admin\" as password. \r\n(It can be another combination, ask your admins about default credentials. The main thing is that they should be changed in the production environment)\r\n\r\n## Expected results:\r\n* Authentication is failed",
+      "text_en": "## Steps to reproduce:\r\n1. Go to the login interface\r\n2. Enter \"admin\" as login and \"admin\" as password. \r\n(It can be another combination, ask your admins about default credentials. The main thing is that they should be changed in the production environment)\r\n\r\n## Expected results:\r\n* Authentication is failed",
+      "text_ru": "## Шаги для воспроизведения:\r\n1. Перейдите на страничку входа в приложение\r\n2. Введите \"admin\" как login и \"admin\" как password. \r\n(Возможна другая комбинация, спросите своих администаторов какая учетная запись используется по-умолчанию. Основной момент в том, что она должна быть сменена в production окружении)\r\n\r\n## Ожидаемый результат:\r\n* Аутентификация не работает"
+    }
+  },
+  {
+    "model": "requirement.testcase",
+    "pk": 3,
+    "fields": {
+      "title": "Authentication is working",
+      "title_en": "Authentication is working",
+      "title_ru": "Аутентификация работает",
+      "text": "## Steps to reproduce:\r\n1. Go to the critical app interface, that must be secured with authentication\r\n2. Copy it's location to the clipboard\r\n3. Open this location in a new \"incognito\" browser window\r\n\r\n## Expected results:\r\n* App redirects you to the login page",
+      "text_en": "## Steps to reproduce:\r\n1. Go to the critical app interface, that must be secured with authentication\r\n2. Copy it's location to the clipboard\r\n3. Open this location in a new \"incognito\" browser window\r\n\r\n## Expected results:\r\n* App redirects you to the login page",
+      "text_ru": "## Шаги для воспроизведения:\r\n1. Откройте критичный интерфейс приложения, который должен быть защищен аутентификацией\r\n2. Скопируйте URL адрес из адресной строки\r\n3. Откройте его в новом окне браузера в режиме \"инкогнито\"\r\n\r\n## Ожидаемые результаты:\r\n* Приложение перенаправило вас на страничку входа"
+    }
+  },
+  {
+    "model": "requirement.testcase",
+    "pk": 4,
+    "fields": {
+      "title": "Limits are set",
+      "title_en": "Limits are set",
+      "title_ru": "Лимиты установлены",
+      "text": "What to check:\r\n- The application will only process business logic flows with all steps being processed in realistic human time, i.e. transactions are not submitted too quickly\r\n- You can not bypass limits with specific HTTP headers like `X-Forwarded-For: 127.0.0.1`\r\n\r\nSteps to reproduce:\r\n1. Input any existing login and a wrong password in the authentication form\r\n2. Repeat step 1 for 20-30 times\r\n\r\nExpected results:\r\n\r\n* You meet delays\r\n* You meet limit errors\r\n* You meet captcha",
+      "text_en": "What to check:\r\n- The application will only process business logic flows with all steps being processed in realistic human time, i.e. transactions are not submitted too quickly\r\n- You can not bypass limits with specific HTTP headers like `X-Forwarded-For: 127.0.0.1`\r\n\r\nSteps to reproduce:\r\n1. Input any existing login and a wrong password in the authentication form\r\n2. Repeat step 1 for 20-30 times\r\n\r\nExpected results:\r\n\r\n* You meet delays\r\n* You meet limit errors\r\n* You meet captcha",
+      "text_ru": "Что проверять:\r\n- Приложение исполняет каждый шаг бизнес логики в реалистичное время для человека, другими словами, транзакции не проводятся слишком быстро. \r\n- You can not bypass limits with specific HTTP headers like `X-Forwarded-For: 127.0.0.1`\r\n\r\nШаги для воспроизведения:\r\n1. Введите любой существующий логин и неправильный пароль в форму аутентификации\r\n2. Повторите первый шаг 20-30 раз\r\n\r\nОжидаемые результаты:\r\n* Вы встречаете задерки в ответе от сервера\r\n* Вы встречаете ошибки по лимитам\r\n* Вы встречаете капчу"
+    }
+  },
+  {
+    "model": "requirement.testcase",
+    "pk": 5,
+    "fields": {
+      "title": "Test for random file names",
+      "title_en": "Test for random file names",
+      "title_ru": "Тест рандомных имен файлов",
+      "text": "Steps to reproduce:\r\n\r\n1. Open your file storage, where files are placed\r\n\r\nExpected results:\r\n\r\n* You see files with unique random-generated names",
+      "text_en": "Steps to reproduce:\r\n\r\n1. Open your file storage, where files are placed\r\n\r\nExpected results:\r\n\r\n* You see files with unique random-generated names",
+      "text_ru": "Шаги для воспроизведения:\r\n\r\n1. Откройте хранилище, где сохраняются файлы\r\n\r\nОжидаемый результат:\r\n\r\n* Вы видите файлы с уникальными рандомно сгенерированными именами"
+    }
+  },
+  {
+    "model": "requirement.testcase",
+    "pk": 6,
+    "fields": {
+      "title": "Test allowed symbols whitelists",
+      "title_en": "Test allowed symbols whitelists",
+      "title_ru": "Тест белых списков разрешенных символов",
+      "text": "Steps to reproduce:\r\n\r\n1. Open any page with form, that you want to test\r\n2. Put any data with any symbol, that is not in your whitelist (ex. these symbols: ```\";'`~/\\.:$^%``` )\r\n\r\nExpected results:\r\n\r\n* You see an error **from backend**",
+      "text_en": "Steps to reproduce:\r\n\r\n1. Open any page with form, that you want to test\r\n2. Put any data with any symbol, that is not in your whitelist (ex. these symbols: ```\";'`~/\\.:$^%``` )\r\n\r\nExpected results:\r\n\r\n* You see an error **from backend**",
+      "text_ru": "Шаги для воспроизведения:\r\n\r\n1. Откройте любую страничку с формой, которую хотите протестировать\r\n2. Отправьте любые данные с символом, которого нет в вашем белом списке (пример:  ```\";'`~/\\.:$^%``` )\r\n\r\nОжидаемый результат:\r\n\r\n* Вы видите ошибку **от бэкенда**"
+    }
+  },
+  {
+    "model": "requirement.testcase",
+    "pk": 7,
+    "fields": {
+      "title": "Test file upload with malicious file extensions",
+      "title_en": "Test file upload with malicious file extensions",
+      "title_ru": "Тестирование загрузки файла с опасным расширением",
+      "text": "Steps to reproduce:\r\n\r\n1. Create a file, which could be executed by the application (ex. `.pht` for php)\r\n2. Upload this file to the application through the file upload form\r\n\r\nExpected results:\r\n\r\n* File is not uploaded\r\n* You see an error",
+      "text_en": "Steps to reproduce:\r\n\r\n1. Create a file, which could be executed by the application (ex. `.pht` for php)\r\n2. Upload this file to the application through the file upload form\r\n\r\nExpected results:\r\n\r\n* File is not uploaded\r\n* You see an error",
+      "text_ru": "Шаги для воспроизведения:\r\n\r\n1. Создайте файл с расширением, которое может быть исполнено исследуемым приложением (прим. `.pht` для php)\r\n2. Загрузите файл в приложение через форму загрузки файлов\r\n\r\nОжидаемые результаты:\r\n\r\n* Файл не загружается\r\n* Вы видите ошибку при загрузке"
+    }
+  },
+  {
+    "model": "requirement.testcase",
+    "pk": 8,
+    "fields": {
+      "title": "Test file upload with path traversal",
+      "title_en": "Test file upload with path traversal",
+      "title_ru": "Тестирование загрузки файла с path traversal",
+      "text": "Steps to reproduce:\r\n\r\n1. Open the dev console in your browser and go to the \"Network\" tab\r\n2. Start recording requests to the backend\r\n3. Upload any file\r\n4. Edit the request, that contains your file\r\n5. Put `../../../../../../../tmp/myfile` in the filename or it's content\r\n\r\nExpected result: \r\n\r\n* There is no file with name `myfile` in `/tmp` directory",
+      "text_en": "Steps to reproduce:\r\n\r\n1. Open the dev console in your browser and go to the \"Network\" tab\r\n2. Start recording requests to the backend\r\n3. Upload any file\r\n4. Edit the request, that contains your file\r\n5. Put `../../../../../../../tmp/myfile` in the filename or it's content\r\n\r\nExpected result: \r\n\r\n* There is no file with name `myfile` in `/tmp` directory",
+      "text_ru": "Шаги для воспроизведения:\r\n\r\n1. Откройте консоль разработчика в браузере и перейдите на вкладку \"Network\"/\"Сеть\"\r\n2. Начните запись запросов к серверу\r\n3. Загрузите любой файл\r\n4. Отредактируйте запрос, который содержал ваш файл\r\n5. Поместите строку `../../../../../../../tmp/myfile` в имя файла или в его содержимое\r\n\r\nОжидаемый результат: \r\n\r\n* На сервере в директории `/tmp` нет файла с именем `myfile`"
+    }
+  },
+  {
+    "model": "requirement.testcase",
+    "pk": 9,
+    "fields": {
+      "title": "Test file rewriting while upload",
+      "title_en": "Test file rewriting while upload",
+      "title_ru": "Тестирование перезаписи файлов при загрузке",
+      "text": "Steps to reproduce:\r\n\r\n1. Upload any file\r\n2. Edit the file: put `SOMETHING NEW` in the file content, but keep filename the same\r\n3. Upload edited file\r\n\r\nExpected result: \r\n\r\n* There are 2 files on the server with different content",
+      "text_en": "Steps to reproduce:\r\n\r\n1. Upload any file\r\n2. Edit the file: put `SOMETHING NEW` in the file content, but keep filename the same\r\n3. Upload edited file\r\n\r\nExpected result: \r\n\r\n* There are 2 files on the server with different content",
+      "text_ru": "Шаги для воспроизведения:\r\n\r\n1. Загрузите любой файл\r\n2. Отредактируйте файл: вставьте `SOMETHING NEW` в содержимое этого файла, но имя оставьте как было\r\n3. Загрузите файл повторно\r\n\r\nОжидаемый результат: \r\n\r\n* На сервере создано 2 файла с разным содержанием"
+    }
+  },
+  {
+    "model": "requirement.testcase",
+    "pk": 10,
+    "fields": {
+      "title": "Testing for Exposed Session Variables",
+      "title_en": "Testing for Exposed Session Variables",
+      "title_ru": "Тестирование безопасной передачи идентификаторов сессий",
+      "text": "[Link to OWASP Testing Guide](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/04-Testing_for_Exposed_Session_Variables)",
+      "text_en": "[Link to OWASP Testing Guide](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/04-Testing_for_Exposed_Session_Variables)",
+      "text_ru": "[Ссылка на OWASP Testing Guide](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/04-Testing_for_Exposed_Session_Variables)"
+    }
+  },
+  {
+    "model": "requirement.testcase",
+    "pk": 11,
+    "fields": {
+      "title": "Test cookie flags",
+      "title_en": "Test cookie flags",
+      "title_ru": "Тестирование куки флагов",
+      "text": "Steps to reproduce\r\n\r\n1. Login to your website\r\n2. Open dev console on the \"Application\" tab\r\n3. Find session cookie\r\n\r\nExpected results:\r\n\r\n* The flag `SameSite=Lax/Strict` is set\r\n* The flag `secure` is set\r\n* The flag `httponly` is set",
+      "text_en": "Steps to reproduce\r\n\r\n1. Login to your website\r\n2. Open dev console on the \"Application\" tab\r\n3. Find session cookie\r\n\r\nExpected results:\r\n\r\n* The flag `SameSite=Lax/Strict` is set\r\n* The flag `secure` is set\r\n* The flag `httponly` is set",
+      "text_ru": "Шаги для воспроизведения\r\n\r\n1. Выполните вход на сайте\r\n2. Откройте консоль разработчика на вкладке \"Application\"\r\n3. Найдите сессионную куку\r\n\r\nОжидаемый результат:\r\n\r\n* Установлен флаг `SameSite=Lax/Strict`\r\n* Установлен флаг `secure`\r\n* Установлен флаг `httponly`"
+    }
+  },
+  {
+    "model": "requirement.testcase",
+    "pk": 12,
+    "fields": {
+      "title": "Test for CORS misconfiguration",
+      "title_en": "Test for CORS misconfiguration",
+      "title_ru": "Тест безопасности CORS",
+      "text": "Steps to reproduce:\r\n\r\n1. Open linux terminal\r\n2. Execute `curl -s -I -H \"Origin: evil.com\" -X GET https://<your_app_here> | grep \"evil.com\"`\r\n\r\nExpected result: \r\n\r\n* There is no response header with `evil.com` domain",
+      "text_en": "Steps to reproduce:\r\n\r\n1. Open linux terminal\r\n2. Execute `curl -s -I -H \"Origin: evil.com\" -X GET https://<your_app_here> | grep \"evil.com\"`\r\n\r\nExpected result: \r\n\r\n* There is no response header with `evil.com` domain",
+      "text_ru": "Шаги для воспроизведения:\r\n\r\n1. Откройте линукс терминал\r\n2. Выполните `curl -s -I -H \"Origin: evil.com\" -X GET https://<your_app_here> | grep \"evil.com\"`\r\n\r\nОжидаемый результат: \r\n\r\n* В ответе от сервера вы не видите заголовка с доменом `evil.com`"
+    }
+  }
+]

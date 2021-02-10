@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "back"
+version = "1.0.0"
+description = ""
+authors = []
+
+[tool.poetry.dependencies]
+python = "3.9.0"
+Django = "^3.0.2"
+psycopg2-binary = "^2.8"
+gunicorn = "^19.9"
+django-environ = "^0.4.5"
+dj-database-url = "^0.5.0"
+django-solo = "^1.1"
+django-admin-sortable2 = "^0.7.7"
+django-rest-framework = "^0.1.0"
+django-cors-headers = "^3.6.0"
+martor = "^1.5.8"
+django-modeltranslation = "^0.16.1"
+django-dramatiq = "^0.9.1"
+redis = "^3.5.3"
+pika = "^1.1.0"
+django-json-widget = "^1.0.1"
+sentry-sdk = "^0.19.5"
+raven = "^6.10.0"
+
+[tool.poetry.dev-dependencies]
+isort = "^4.3"
+black = {version = "^19.10b0", allow-prereleases = true}
+django-dynamic-fixture = "^3.1.1"
+pre-commit = "^2.9.3"
+
+[tool.black]
+line-length = 120
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | dist
+  | data/
+)/
+'''
+[build-system]
+

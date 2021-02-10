@@ -1,0 +1,13 @@
+{% extends "base_error.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Error 404" %}{% endblock %}
+
+{% block content %}
+    <div class="number">404</div>
+    <div class="number-title">{% trans "Ooops!!!" %} </div>
+    <div class="number-subtitle">{% trans "THAT PAGE DOES NOT EXIST OR IS UNAVAILABLE" %}</div>
+    <a href="/" class="cta cta-link">{% trans "go back to home" %}</a>
+{% endblock %}
+
