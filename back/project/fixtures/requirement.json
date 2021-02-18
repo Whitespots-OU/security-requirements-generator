@@ -461,9 +461,9 @@
       "title": "Try to register in your application",
       "title_en": "Try to register in your application",
       "title_ru": "Попробуйте зарегистрироваться в вашем приложении",
-      "text": "Steps to reproduce:\r\n1. Go to the register interface\r\nIf you can not find it - replace \"/login\" to \"/register\" or \"/signup\" in your address bar.\r\n2. Register\r\n\r\n Expected results:\r\n* You can not access the registration interface\r\n* Registration is failed",
-      "text_en": "Steps to reproduce:\r\n1. Go to the register interface\r\nIf you can not find it - replace \"/login\" to \"/register\" or \"/signup\" in your address bar.\r\n2. Register\r\n\r\n Expected results:\r\n* You can not access the registration interface\r\n* Registration is failed",
-      "text_ru": "Шаги для воспроизведения:\r\n1. Откройте страничку с регистрацией\r\nЕсли вы не можете найти такую - замените \"/login\" на \"/register\" или \"/signup\" в адресной строке.\r\n2. Регистрируйтесь\r\n\r\n Ожидаемый результат:\r\n* Вы не можете получить доступ к страничке регистрации\r\n* Регистрация завершена с ошибкой"
+      "text": "Steps to reproduce:\r\n\r\n1. Go to the register interface\r\nIf you can not find it - replace \"/login\" to \"/register\" or \"/signup\" in your address bar.\r\n\r\n2. Register\r\n\r\nExpected results:\r\n\r\n* You can not access the registration interface\r\n* Registration is failed",
+      "text_en": "Steps to reproduce:\r\n\r\n1. Go to the register interface\r\nIf you can not find it - replace \"/login\" to \"/register\" or \"/signup\" in your address bar.\r\n\r\n2. Register\r\n\r\nExpected results:\r\n\r\n* You can not access the registration interface\r\n* Registration is failed",
+      "text_ru": "Шаги для воспроизведения:\r\n\r\n1. Откройте страничку с регистрацией\r\nЕсли вы не можете найти такую - замените \"/login\" на \"/register\" или \"/signup\" в адресной строке.\r\n\r\n2. Регистрируйтесь\r\n\r\nОжидаемый результат:\r\n \r\n* Вы не можете получить доступ к страничке регистрации\r\n* Регистрация завершена с ошибкой"
     }
   },
   {
@@ -473,9 +473,9 @@
       "title": "Check default credentials",
       "title_en": "Check default credentials",
       "title_ru": "Проверьте стандартные учетные записи",
-      "text": "Steps to reproduce:\r\n1. Go to the login interface\r\n2. Enter \"admin\" as login and \"admin\" as password. \r\n(It can be another combination, ask your admins about default credentials. The main thing is that they should be changed in the production environment)\r\n\r\n Expected results:\r\n* Authentication is failed",
-      "text_en": "Steps to reproduce:\r\n1. Go to the login interface\r\n2. Enter \"admin\" as login and \"admin\" as password. \r\n(It can be another combination, ask your admins about default credentials. The main thing is that they should be changed in the production environment)\r\n\r\n Expected results:\r\n* Authentication is failed",
-      "text_ru": "Шаги для воспроизведения:\r\n1. Перейдите на страничку входа в приложение\r\n2. Введите \"admin\" как login и \"admin\" как password. \r\n(Возможна другая комбинация, спросите своих администаторов какая учетная запись используется по-умолчанию. Основной момент в том, что она должна быть сменена в production окружении)\r\n\r\n Ожидаемый результат:\r\n* Аутентификация не работает"
+      "text": "Steps to reproduce:\r\n\r\n1. Go to the login interface\r\n2. Enter \"admin\" as login and \"admin\" as password. \r\n(It can be another combination, ask your admins about default credentials. The main thing is that they should be changed in the production environment)\r\n\r\nExpected results:\r\n\r\n* Authentication is failed",
+      "text_en": "Steps to reproduce:\r\n\r\n1. Go to the login interface\r\n2. Enter \"admin\" as login and \"admin\" as password. \r\n(It can be another combination, ask your admins about default credentials. The main thing is that they should be changed in the production environment)\r\n\r\nExpected results:\r\n\r\n* Authentication is failed",
+      "text_ru": "Шаги для воспроизведения:\r\n\r\n1. Перейдите на страничку входа в приложение\r\n2. Введите \"admin\" как login и \"admin\" как password. \r\n(Возможна другая комбинация, спросите своих администаторов какая учетная запись используется по-умолчанию. Основной момент в том, что она должна быть сменена в production окружении)\r\n\r\nОжидаемый результат:\r\n\r\n* Аутентификация не работает"
     }
   },
   {
@@ -485,9 +485,9 @@
       "title": "Authentication is working",
       "title_en": "Authentication is working",
       "title_ru": "Аутентификация работает",
-      "text": "Steps to reproduce:\r\n1. Go to the critical app interface, that must be secured with authentication\r\n2. Copy it's location to the clipboard\r\n3. Open this location in a new \"incognito\" browser window\r\n\r\n Expected results:\r\n* App redirects you to the login page",
-      "text_en": "Steps to reproduce:\r\n1. Go to the critical app interface, that must be secured with authentication\r\n2. Copy it's location to the clipboard\r\n3. Open this location in a new \"incognito\" browser window\r\n\r\n Expected results:\r\n* App redirects you to the login page",
-      "text_ru": "Шаги для воспроизведения:\r\n1. Откройте критичный интерфейс приложения, который должен быть защищен аутентификацией\r\n2. Скопируйте URL адрес из адресной строки\r\n3. Откройте его в новом окне браузера в режиме \"инкогнито\"\r\n\r\n Ожидаемые результаты:\r\n* Приложение перенаправило вас на страничку входа"
+      "text": "Steps to reproduce:\r\n\r\n1. Go to the critical app interface, that must be secured with authentication\r\n2. Copy it's location to the clipboard\r\n3. Open this location in a new \"incognito\" browser window\r\n\r\nExpected results:\r\n\r\n* App redirects you to the login page",
+      "text_en": "Steps to reproduce:\r\n\r\n1. Go to the critical app interface, that must be secured with authentication\r\n2. Copy it's location to the clipboard\r\n3. Open this location in a new \"incognito\" browser window\r\n\r\nExpected results:\r\n\r\n* App redirects you to the login page",
+      "text_ru": "Шаги для воспроизведения:\r\n\r\n1. Откройте критичный интерфейс приложения, который должен быть защищен аутентификацией\r\n2. Скопируйте URL адрес из адресной строки\r\n3. Откройте его в новом окне браузера в режиме \"инкогнито\"\r\n\r\nОжидаемые результаты:\r\n\r\n* Приложение перенаправило вас на страничку входа"
     }
   },
   {
@@ -497,9 +497,9 @@
       "title": "Limits are set",
       "title_en": "Limits are set",
       "title_ru": "Лимиты установлены",
-      "text": "What to check:\r\n- The application will only process business logic flows with all steps being processed in realistic human time, i.e. transactions are not submitted too quickly\r\n- You can not bypass limits with specific HTTP headers like `X-Forwarded-For: 127.0.0.1`\r\n\r\nSteps to reproduce:\r\n1. Input any existing login and a wrong password in the authentication form\r\n2. Repeat step 1 for 20-30 times\r\n\r\nExpected results:\r\n\r\n* You meet delays\r\n* You meet limit errors\r\n* You meet captcha",
-      "text_en": "What to check:\r\n- The application will only process business logic flows with all steps being processed in realistic human time, i.e. transactions are not submitted too quickly\r\n- You can not bypass limits with specific HTTP headers like `X-Forwarded-For: 127.0.0.1`\r\n\r\nSteps to reproduce:\r\n1. Input any existing login and a wrong password in the authentication form\r\n2. Repeat step 1 for 20-30 times\r\n\r\nExpected results:\r\n\r\n* You meet delays\r\n* You meet limit errors\r\n* You meet captcha",
-      "text_ru": "Что проверять:\r\n- Приложение исполняет каждый шаг бизнес логики в реалистичное время для человека, другими словами, транзакции не проводятся слишком быстро. \r\n- You can not bypass limits with specific HTTP headers like `X-Forwarded-For: 127.0.0.1`\r\n\r\nШаги для воспроизведения:\r\n1. Введите любой существующий логин и неправильный пароль в форму аутентификации\r\n2. Повторите первый шаг 20-30 раз\r\n\r\nОжидаемые результаты:\r\n* Вы встречаете задерки в ответе от сервера\r\n* Вы встречаете ошибки по лимитам\r\n* Вы встречаете капчу"
+      "text": "What to check:\r\n\r\n- The application will only process business logic flows with all steps being processed in realistic human time, i.e. transactions are not submitted too quickly\r\n- You can not bypass limits with specific HTTP headers like `X-Forwarded-For: 127.0.0.1`\r\n\r\nSteps to reproduce:\r\n\r\n1. Input any existing login and a wrong password in the authentication form\r\n2. Repeat step 1 for 20-30 times\r\n\r\nExpected results:\r\n\r\n* You meet delays\r\n* You meet limit errors\r\n* You meet captcha",
+      "text_en": "What to check:\r\n\r\n- The application will only process business logic flows with all steps being processed in realistic human time, i.e. transactions are not submitted too quickly\r\n- You can not bypass limits with specific HTTP headers like `X-Forwarded-For: 127.0.0.1`\r\n\r\nSteps to reproduce:\r\n\r\n1. Input any existing login and a wrong password in the authentication form\r\n2. Repeat step 1 for 20-30 times\r\n\r\nExpected results:\r\n\r\n* You meet delays\r\n* You meet limit errors\r\n* You meet captcha",
+      "text_ru": "Что проверять:\r\n\r\n- Приложение исполняет каждый шаг бизнес логики в реалистичное время для человека, другими словами, транзакции не проводятся слишком быстро. \r\n- You can not bypass limits with specific HTTP headers like `X-Forwarded-For: 127.0.0.1`\r\n\r\nШаги для воспроизведения:\r\n\r\n1. Введите любой существующий логин и неправильный пароль в форму аутентификации\r\n2. Повторите первый шаг 20-30 раз\r\n\r\nОжидаемые результаты:\r\n\r\n* Вы встречаете задерки в ответе от сервера\r\n* Вы встречаете ошибки по лимитам\r\n* Вы встречаете капчу"
     }
   },
   {
