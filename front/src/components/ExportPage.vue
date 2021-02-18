@@ -65,10 +65,11 @@
                   <div class="d-flex align-items-center">
                     <b-form-checkbox
                         :key="index_req"
-                        v-model="selectedReq[cat.id]"
-                        :value="req"
-                        v-b-popover.hover="$t('you may mark it as important')"
-                        switch>
+                        :model="selectedReq[cat.id]"
+                        @change="turnSwitcher($event, cat.id, req.id)"
+                        :value="req.id"
+                        switch
+                        v-b-popover.hover="'Make requirement as important or not'">
                       {{ req.title }}
                     </b-form-checkbox>
                   </div>
@@ -131,15 +132,18 @@ export default {
     }
   },
   methods: {
-    makeExport: function () {
-      const postData = []
-      for (const catId of Object.keys(this.selectedReq)) {
-        let redIds = []
-        for (const req of this.selectedReq[catId])
-          redIds.push(req.id)
-
-        postData.push({"category_id": catId, "requirements_ids": redIds})
+    turnSwitcher: function($event, catId, reqId) {
+      if ($event === false) {
+        this.selectedReq[catId] = this.selectedReq[catId].filter((r) => { reqId !== r })
       }
+      else {
+        this.selectedReq[catId].push(reqId)
+      }
+    },
+    makeExport: function () {
+      let postData = []
+      for (const catId of Object.keys(this.selectedReq))
+        postData.push({"category_id": catId, "requirements_ids": this.selectedReq[catId]})
 
       let timeoutId;
       axios
