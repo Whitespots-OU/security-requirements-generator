@@ -23,7 +23,7 @@ And have a useful set of **important** and **relevant** requirements:
 
 # Clone
 ```bash
-git clone --recurse-submodules --remote-submodules -j8 https://github.com/Whitespots-OU/security-requirements-generator.git srg && \
+git clone https://github.com/Whitespots-OU/security-requirements-generator.git srg && \
 cd srg
 ```
 
