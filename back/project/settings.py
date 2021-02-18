@@ -16,12 +16,12 @@ env = environ.Env(
     SECRET_KEY=(str, "=ees8976541f=g0_bzup_0a(m^4@4+ke395t3fruaoj!z#lleivq"),
     LANGUAGE_CODE=(str, "en"),
     DB_USER=(str, "user"),
-    DB_PASS=(str, None),
-    DB_HOST=(str, "pg-service"),
+    DB_PASS=(str, "pass"),
+    DB_HOST=(str, "pg"),
     DB_NAME=(str, "main"),
     BASE_URL=(str, "http://localhost:8000"),
     ROLE=(str, "prod"),
-    REDIS_DSN=(str, "redis://redis-service:6379/0"),
+    REDIS_DSN=(str, "redis://redis:6379/0"),
     SENTRY_DSN=(str, None),
 )
 

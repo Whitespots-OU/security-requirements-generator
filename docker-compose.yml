@@ -26,8 +26,8 @@ services:
       - pg
     expose:
       - 8000
-    env_file:
-      - back/.env.docker
+    environment:
+      - BASE_URL=${BASE_URL}
     volumes:
       - static_data:/application/src/media
       - static_data:/application/src/static
@@ -43,8 +43,8 @@ services:
     depends_on:
       - pg
       - redis
-    env_file:
-      - back/.env.docker
+    environment:
+      - BASE_URL=${BASE_URL}
     volumes:
       - static_data:/application/src/media
       - static_data:/application/src/static

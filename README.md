@@ -30,6 +30,7 @@ cd srg
 # Deploy
 ## Server
 ```bash
+export BASE_URL=http://hostname.com
 docker-compose up -d --build
 docker-compose run back migrate
 docker-compose run back collectstatic
@@ -47,6 +48,17 @@ pyenv virtualenv 3.9.0 srg_back
 pyenv activate srg_back
 pip install poetry
 poetry install
+```
+- set environments
+```bash
+export DEBUG=on
+export ALLOWED_HOSTS=*
+export BASE_URL=http://localhost:8000
+export REDIS_DSN=redis://localhost:6379/0
+export DB_USER=user
+export DB_PASS=pass
+export DB_HOST=localhost
+export DB_NAME=srg
 ```
 - call `pre-commit install` at command line
 - create DB in pg market
