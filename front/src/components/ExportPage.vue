@@ -67,11 +67,10 @@
                         :key="index_req"
                         v-model="selectedReq[cat.id]"
                         :value="req"
+                        v-b-popover.hover="$t('you may mark it as important')"
                         switch>
                       {{ req.title }}
                     </b-form-checkbox>
-<!--                    <div class="verified" :if="selectedReq[cat.id].includes(req)">important</div>-->
-<!--                    <div class="dont-choice" :if="!selectedReq[cat.id].includes(req)">not important</div>-->
                   </div>
                   <button type="button" class="btn show-btn" v-b-modal="'requirementModal'" @click="loadRequirement(req.id)">
                     <img src="@/assets/img/info.svg" alt="info" class="info-img">
