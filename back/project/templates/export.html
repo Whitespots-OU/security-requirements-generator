@@ -35,13 +35,6 @@
             {% for requirement in category.requirements %}
                 <div class="d-flex {% if requirement.id in category.selected_ids %}important-cont{% endif %}">
                     <div class="custom-control custom-checkbox w-100">
-                        <label>
-                            <input type="checkbox" class="custom-control-input" name="{{ category.category.id }}checkbox_req_{{ requirement.id }}" id="{{ category.category.id }}checkbox_req_{{ requirement.id }}">
-                            {{ requirement.title }}
-                        </label>
-                        <a href="{{ BASE_URL }}/{{ LANGUAGE_CODE }}/requirement/{{ requirement.id }}" class="input-link">
-                            {% trans "full description" %}
-                        </a>
                         <label class="custom-control-label">
                             <div class="input-title d-flex align-items-center">
                                 {% if requirement.id in category.selected_ids %}
@@ -49,6 +42,13 @@
                                 {% endif %}
                             </div>
                         </label>
+                        <label>
+                            <input type="checkbox" class="custom-control-input" name="{{ category.category.id }}checkbox_req_{{ requirement.id }}" id="{{ category.category.id }}checkbox_req_{{ requirement.id }}">
+                            {{ requirement.title }}
+                        </label>
+                        <a href="{{ BASE_URL }}/{{ LANGUAGE_CODE }}/requirement/{{ requirement.id }}" class="input-link">
+                            {% trans "full description" %}
+                        </a>
                     </div>
                 </div>
             {% endfor %}
