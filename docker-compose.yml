@@ -14,7 +14,7 @@ services:
       - nginx/.env.docker
     volumes:
       - ./front/dist/prod:/var/www/front
-      - static_data:/var/www/media
+      - media_data:/var/www/media
       - static_data:/var/www/static
 
   back:
@@ -29,7 +29,7 @@ services:
     environment:
       - BASE_URL=${BASE_URL}
     volumes:
-      - static_data:/application/src/media
+      - media_data:/application/src/media
       - static_data:/application/src/static
       - ./back/project/fixtures:/application/src/project/fixtures
 
@@ -46,7 +46,7 @@ services:
     environment:
       - BASE_URL=${BASE_URL}
     volumes:
-      - static_data:/application/src/media
+      - media_data:/application/src/media
       - static_data:/application/src/static
 
   pg:
@@ -62,5 +62,7 @@ services:
   redis:
     image: redis
     restart: always
+
 volumes:
+  media_data:
   static_data:
