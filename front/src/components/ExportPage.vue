@@ -39,23 +39,23 @@
         <div class="col-4 d-none d-md-block pl-0">
           <div class="card list-group" id="list">
             <a class="list-group-item list-group-item-action"
-               v-for="(cat, index_cat) in categories"
-               v-if="selectedIds.includes(cat.id)"
+               v-for="(cat, index_cat) in getCategories"
+               v-if="getSelectedCategoriesIds.includes(cat.id)"
                :href="'#cat-' + index_cat">
               {{ cat.name }}
             </a>
           </div>
           <div class="card disabled-card list-group">
             <a class="list-group-item list-group-item-action" style="cursor: default"
-               v-for="(cat, index_cat) in categories"
-               v-if="!selectedIds.includes(cat.id)">
+               v-for="(cat, index_cat) in getCategories"
+               v-if="!getSelectedCategoriesIds.includes(cat.id)">
               {{ cat.name }}
             </a>
           </div>
         </div>
         <div class="col-12 col-md-8 pr-md-0 ">
           <div data-spy="scroll" data-target="#list" data-offset="0" class="sc">
-            <div class="card" :id="'cat-' + index_cat" v-for="(cat, index_cat) in categories" v-if="selectedIds.includes(cat.id)">
+            <div class="card" :id="'cat-' + index_cat" v-for="(cat, index_cat) in getCategories" v-if="getSelectedCategoriesIds.includes(cat.id)">
               <div class="col-12 col-md-8">
                 <div class="card-title">{{ cat.name }}</div>
                 <p class="p-text">
@@ -65,12 +65,11 @@
                   <div class="d-flex align-items-center">
                     <b-form-checkbox
                         :key="index_req"
-                        :model="selectedReq[cat.id]"
+                        :model="getSelectedCategoriesIds[cat.id]"
                         @change="turnSwitcher($event, cat.id, req.id)"
                         :value="req.id"
-                        switch
-                        v-b-popover.hover="'Make requirement as important or not'">
-                      {{ req.title }}
+                        switch>
+                      <span v-b-popover.hover="$t('Make requirement as important or not')">{{ req.title }}</span>
                     </b-form-checkbox>
                   </div>
                   <button type="button" class="btn show-btn" v-b-modal="'requirementModal'" @click="loadRequirement(req.id)">
@@ -116,6 +115,8 @@
 
 <script>
 import * as axios from 'axios'
+import {mapGetters} from 'vuex'
+import {i18n} from '@/i18n'
 
 export default {
   name: 'ExportPage',
@@ -123,13 +124,21 @@ export default {
     return {
       selectedIds: [],
       selectedReq: {},
-      categories: [],
       isResultSent: false,
       hasError: false,
       isDone: false,
       exportId: null,
       currentRequirement: {}
     }
+  },
+  computed: {
+    ...mapGetters(['getCategories', 'getSelectedCategoriesIds'])
+  },
+  created() {
+    if (this.getSelectedCategoriesIds.length === 0)
+      this.$router.push({'name': 'Home'})
+
+    this.getSelectedCategoriesIds.map((i) => { this.selectedReq[i] = []})
   },
   methods: {
     turnSwitcher: function($event, catId, reqId) {
@@ -147,7 +156,7 @@ export default {
 
       let timeoutId;
       axios
-          .post('export', {data: postData})
+          .post('export', {data: postData, language: this.$i18n.locale})
           .then(response => {
             this.isResultSent = true
             this.exportId = response.data.uuid
@@ -201,24 +210,6 @@ export default {
       this.isResultSent = false
     },
   },
-  created: function() {
-    axios
-        .get('category')
-        .then(response => {
-          this.categories = response.data.results
-
-          this.selectedIds = JSON.parse(localStorage.getItem("selected")) || []
-          for (const cat of this.categories) {
-            if (!this.selectedIds.includes(cat.id))
-              continue
-
-            this.selectedReq[cat.id] = []
-          }
-        })
-        .catch(error => {
-          console.error(error)
-        })
-  }
 }
 </script>
 

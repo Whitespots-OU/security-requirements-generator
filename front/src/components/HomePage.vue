@@ -10,11 +10,11 @@
         <div class="col-md-6 col-12 p-0 left-container">
           <div class="row row-cont pl-md-0 pr-md-0">
             <div class="col-md-5 col-12">
-              <div class="input-cont d-flex align-items-center" v-for="(cat, index) in categories" v-if="index % 2 === 0">
+              <div class="input-cont d-flex align-items-center" v-for="(cat, index) in getCategories" v-if="index % 2 === 0">
                 <b-form-checkbox
                     :key="index"
                     v-model="selected"
-                    :value="cat"
+                    :value="cat.id"
                     switch
                     @change="toggle">
                   {{ cat.name }}
@@ -22,11 +22,11 @@
               </div>
             </div>
             <div class="col-md-5 col-12 right-input">
-              <div class="input-cont d-flex align-items-center" v-for="(cat, index) in categories" v-if="index % 2 === 1">
+              <div class="input-cont d-flex align-items-center" v-for="(cat, index) in getCategories" v-if="index % 2 === 1">
                 <b-form-checkbox
                     :key="index"
                     v-model="selected"
-                    :value="cat"
+                    :value="cat.id"
                     switch
                     @change="toggle">
                   {{ cat.name }}
@@ -34,7 +34,7 @@
               </div>
             </div>
             <div class="col-md-5 col-12 pr-md-0 cta-cont">
-              <router-link class="w-100 btn pt-md-4 pb-md-4 pt-3 pb-3 cta"
+              <router-link class="w-100 btn pt-md-4 pb-md-4 pt-3 pb-3 cta" :disabled="selected.length === 0"
                            :to="{ name: 'Export', params: { locale: this.$i18n.locale }}" tag="button">
                 {{ $t('Get requirements') }}
               </router-link>
@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import * as axios from 'axios'
+import {mapGetters, mapActions} from 'vuex'
 
 export default {
   name: 'HomePage',
@@ -60,30 +60,18 @@ export default {
       categories: [],
     }
   },
+  computed: {
+    ...mapGetters(['getCategories'])
+  },
+  created() {
+    this.loadCategories()
+  },
   methods: {
-    toggle: function () {
-      const selected = []
-      for (const cat of this.selected) {
-        selected.push(cat.id)
-      }
-      localStorage.setItem("selected", JSON.stringify(selected))
+    ...mapActions(['loadCategories', 'setCategoriesIds']),
+    toggle() {
+      this.setCategoriesIds(this.selected)
     }
   },
-  created: function() {
-    axios
-        .get('category')
-        .then(response => {
-          this.categories = response.data.results
-
-          const selected = JSON.parse(localStorage.getItem("selected")) || []
-          for (const cat of this.categories)
-            if (selected.includes(cat.id))
-              this.selected.push(cat)
-        })
-        .catch(error => {
-          console.error(error)
-        })
-  }
 }
 </script>
 
