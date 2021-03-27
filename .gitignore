@@ -15,7 +15,7 @@ data/
 
 back/tmp/
 back/.env
-#back/media/
-#back/static/
+back/media/
+back/static/
 
 front/node_modules/
