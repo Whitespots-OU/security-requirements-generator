@@ -6,7 +6,7 @@ import { i18n } from '../i18n'
 
 axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 axios.defaults.xsrfCookieName = 'csrftoken'
-axios.defaults.baseURL = `${process.env.VUE_APP_BASE_API_URL}/api/v1`
+axios.defaults.baseURL = `/api/v1`
 axios.interceptors.request.use((config) => {
     if (!config.url.endsWith('/'))
         config.url += '/'
