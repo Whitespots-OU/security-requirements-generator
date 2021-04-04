@@ -42,18 +42,18 @@ jobs:
         with:
           context: ./back/
           push: false
-          tags: whitespots/security-requirements-generator-back:${{ fromJson(steps.gen_tags.outputs.tags) }}
+          tags: whitespots/security-requirements-generator-back:${{ steps.meta.outputs.version }}
       -
         name: Build front
         uses: docker/build-push-action@v2
         with:
           context: ./front/
           push: false
-          tags: whitespots/security-requirements-generator-back:${{ fromJson(steps.gen_tags.outputs.tags) }}
+          tags: whitespots/security-requirements-generator-back:tags:${{ steps.meta.outputs.version }}
       -
         name: Build nginx
         uses: docker/build-push-action@v2
         with:
           context: ./nginx/
           push: false
-          tags: whitespots/security-requirements-generator-back:${{ fromJson(steps.gen_tags.outputs.tags) }}
+          tags: whitespots/security-requirements-generator-back:${{ steps.meta.outputs.version }}
