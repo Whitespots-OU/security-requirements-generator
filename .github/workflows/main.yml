@@ -11,14 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Gen TAG
-        id: gen_tags
+        id: gen_tag
         run: |
           if [[ $GITHUB_REF == 'refs/tags/v'* ]]; then
-            TAGS='"'${GITHUB_REF/refs\/tags\//}'"'
+            TAG='"'${GITHUB_REF/refs\/tags\//}'"'
           else
-            TAGS='"user/image:latest"'
+            TAG='"user/image:latest"'
           fi
-          echo '::set-output name=tag::'$TAGS
+          echo '::set-output name=tag::'$TAG
       -
         name: Docker meta
         id: meta
@@ -42,7 +42,7 @@ jobs:
 #         with:
 #           context: ./back/
 #           push: false
-#           tags: whitespots/security-requirements-generator-back:${{ fromJson(steps.gen_tags.outputs.tags) }}
+#           tags: whitespots/security-requirements-generator-back:${{ fromJson(steps.gen_tag.outputs.tag) }}
 #       -
 #         name: Build front
 #         uses: docker/build-push-action@v2
@@ -64,4 +64,4 @@ jobs:
         with:
           context: ./nginx/
           push: false
-          tags: whitespots/security-requirements-generator-nginx:${{ fromJson(steps.gen_tags.outputs.tags) }}
+          tags: whitespots/security-requirements-generator-nginx:${{ fromJson(steps.gen_tag.outputs.tag) }}
