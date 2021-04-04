@@ -20,30 +20,23 @@ jobs:
 #           username: ${{ secrets.DOCKERHUB_USERNAME }}
 #           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
-        name: Back
-        id: docker_build
+        name: Build back
         uses: docker/build-push-action@v2
         with:
           context: ./back/
           push: false
           tags: whitespots/security-requirements-generator-back:0.1.0
-#       -
-#         name: Front
-#         id: docker_build
-#         uses: docker/build-push-action@v2
-#         with:
-#           context: ./front/
-#           push: false
-#           tags: whitespots/security-requirements-generator-front:0.1.0
-#       -
-#         name: nginx
-#         id: docker_build
-#         uses: docker/build-push-action@v2
-#         with:
-#           context: ./nginx/
-#           push: false
-#           tags: whitespots/security-requirements-generator-nginx:0.1.0
-          
       -
-        name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
+        name: Build front
+        uses: docker/build-push-action@v2
+        with:
+          context: ./front/
+          push: false
+          tags: whitespots/security-requirements-generator-front:0.1.0
+      -
+        name: Build nginx
+        uses: docker/build-push-action@v2
+        with:
+          context: ./nginx/
+          push: false
+          tags: whitespots/security-requirements-generator-nginx:0.1.0
