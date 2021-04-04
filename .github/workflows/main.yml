@@ -24,25 +24,25 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: ./back/
           push: false
           tags: whitespots/security-requirements-generator-back:0.1.0
-      -
-        name: Front
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: false
-          tags: whitespots/security-requirements-generator-front:0.1.0
-      -
-        name: nginx
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: false
-          tags: whitespots/security-requirements-generator-nginx:0.1.0
+#       -
+#         name: Front
+#         id: docker_build
+#         uses: docker/build-push-action@v2
+#         with:
+#           context: ./front/
+#           push: false
+#           tags: whitespots/security-requirements-generator-front:0.1.0
+#       -
+#         name: nginx
+#         id: docker_build
+#         uses: docker/build-push-action@v2
+#         with:
+#           context: ./nginx/
+#           push: false
+#           tags: whitespots/security-requirements-generator-nginx:0.1.0
           
       -
         name: Image digest
