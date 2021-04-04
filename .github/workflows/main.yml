@@ -14,46 +14,54 @@ jobs:
         id: gen_tags
         run: |
           if [[ $GITHUB_REF == 'refs/tags/v'* ]]; then
-            TAGS='["'${GITHUB_REF/refs\/tags\//}'"]'
+            TAGS='"'${GITHUB_REF/refs\/tags\//}'"'
           else
-            TAGS='["user/image:latest"]'
+            TAGS='"user/image:latest"'
           fi
-          echo '::set-output name=tags::'$TAGS
+          echo '::set-output name=tag::'$TAGS
       -
         name: Docker meta
         id: meta
         uses: crazy-max/ghaction-docker-meta@v2
         with:
           images: whitespots/security-requirements-generator
-          tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}      
+#           tags: |
+#             type=ref,event=branch
+#             type=ref,event=pr
+#             type=semver,pattern={{version}}
+#             type=semver,pattern={{major}}.{{minor}}      
 #       -
 #         name: Login to DockerHub
 #         uses: docker/login-action@v1 
 #         with:
 #           username: ${{ secrets.DOCKERHUB_USERNAME }}
 #           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Build back
-        uses: docker/build-push-action@v2
-        with:
-          context: ./back/
-          push: false
-          tags: whitespots/security-requirements-generator-back:${{ steps.meta.outputs.version }}
-      -
-        name: Build front
-        uses: docker/build-push-action@v2
-        with:
-          context: ./front/
-          push: false
-          tags: whitespots/security-requirements-generator-back:tags:${{ steps.meta.outputs.version }}
+#       -
+#         name: Build back
+#         uses: docker/build-push-action@v2
+#         with:
+#           context: ./back/
+#           push: false
+#           tags: whitespots/security-requirements-generator-back:${{ fromJson(steps.gen_tags.outputs.tags) }}
+#       -
+#         name: Build front
+#         uses: docker/build-push-action@v2
+#         with:
+#           context: ./front/
+#           push: false
+#           tags: whitespots/security-requirements-generator-front:${{ steps.meta.outputs.version }}
       -
         name: Build nginx
         uses: docker/build-push-action@v2
         with:
           context: ./nginx/
           push: false
-          tags: whitespots/security-requirements-generator-back:${{ steps.meta.outputs.version }}
+          tags: whitespots/security-requirements-generator-nginx:${{ steps.meta.outputs.version }}
+
+      -
+        name: Build nginx
+        uses: docker/build-push-action@v2
+        with:
+          context: ./nginx/
+          push: false
+          tags: whitespots/security-requirements-generator-nginx:${{ fromJson(steps.gen_tags.outputs.tags) }}
