@@ -33,7 +33,7 @@ jobs:
         with:
           context: ./back/
           push: true
-          tags: whitespots/security-requirements-generator-back:${{ fromJson(steps.gen_tag.outputs.tag) }}
+          tags: whitespots/security-requirements-generator-back:${{ steps.meta.outputs.version }}
       -
         name: Build front
         uses: docker/build-push-action@v2
