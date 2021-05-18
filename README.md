@@ -33,8 +33,8 @@ cd srg
 export BASE_URL=http://hostname.com
 docker-compose up -d --build
 docker-compose run back migrate
-docker-compose run back collectstatic
 docker-compose run back loaddata
+docker-compose run back collectstatic
 docker-compose exec back ./manage.py create_super_user --username admin --password PASSWORD
 open https://hostname.com/admin/  # to login and set your company name
 ```
