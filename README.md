@@ -30,7 +30,7 @@ cd srg
 # Deploy
 ## Server
 ```bash
-export BASE_URL=http://text_your_hostname(domain)_here
+export BASE_URL=http://text_your_hostname(domain)
 docker-compose up -d --build
 docker-compose run back migrate
 docker-compose run back collectstatic
