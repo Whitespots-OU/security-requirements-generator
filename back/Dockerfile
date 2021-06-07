@@ -24,7 +24,7 @@ RUN poetry install --no-dev
 ADD . ${WORK_DIR}
 
 RUN chmod -R og+w ${WORK_DIR}/media ${WORK_DIR}/static ${WORK_DIR}/project/fixtures/
-USER ${USER}
+# USER ${USER}
 
 ENTRYPOINT ["/application/src/docker-entrypoint.sh"]
 CMD ["run-web"]

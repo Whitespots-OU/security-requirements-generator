@@ -18,4 +18,4 @@ COPY . .
 
 RUN npm run build
 
-USER ${USER}
+# USER ${USER}
