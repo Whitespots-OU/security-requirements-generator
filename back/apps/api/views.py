@@ -14,7 +14,7 @@ __all__ = ["CategoryViewSet", "CreateRequestExportView", "ExportRequestRetrieveD
 
 
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = models.Category.objects.all()
+    queryset = models.Category.objects.filter(show_at_home=True).all()
     serializer_class = serializers.CategorySerializer
 
 

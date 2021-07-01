@@ -26,10 +26,10 @@ class TranslationMedia:
 
 @admin.register(Category)
 class CategoryAdmin(SortableAdminMixin, TranslationAdmin, admin.ModelAdmin):
-    list_display = ["name_en", "show_at_home"]
+    list_display = ["name_en", "show_at_home", "is_default"]
     search_fields = ["name"]
     list_filter = ["show_at_home"]
-    list_editable = ["show_at_home"]
+    list_editable = ["show_at_home", "is_default"]
 
     class Media(TranslationMedia):
         ...
@@ -39,8 +39,9 @@ class CategoryAdmin(SortableAdminMixin, TranslationAdmin, admin.ModelAdmin):
 class RequirementAdmin(MarkDownMixin, TranslationAdmin, admin.ModelAdmin):
     filter_horizontal = ["test_cases", "categories"]
 
-    list_display = ["title_en", "categories_flat_list"]
+    list_display = ["title_en", "categories_flat_list", "is_default"]
     search_fields = ["requirement__name", "text"]
+    list_editable = ['is_default']
     fieldsets = (
         (_("Description"), {'fields': ("title", "summary", "text", )}),
         (_("Categories"), {'fields': ("categories", )}),
