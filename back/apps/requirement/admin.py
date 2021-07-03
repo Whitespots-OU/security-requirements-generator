@@ -40,7 +40,7 @@ class RequirementAdmin(MarkDownMixin, TranslationAdmin, admin.ModelAdmin):
     filter_horizontal = ["test_cases", "categories"]
 
     list_display = ["title_en", "categories_flat_list", "is_default"]
-    search_fields = ["requirement__name", "text"]
+    search_fields = ["title"]
     list_editable = ['is_default']
     fieldsets = (
         (_("Description"), {'fields': ("title", "summary", "text", )}),
@@ -60,7 +60,7 @@ class RequirementAdmin(MarkDownMixin, TranslationAdmin, admin.ModelAdmin):
 @admin.register(TestCase)
 class TestCaseAdmin(MarkDownMixin, TranslationAdmin, admin.ModelAdmin):
     list_display = ["title_en"]
-    search_fields = ["title", "text"]
+    search_fields = ["title"]
 
     class Media(TranslationMedia):
         ...
