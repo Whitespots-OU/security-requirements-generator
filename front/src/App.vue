@@ -16,7 +16,9 @@
               <span class="languges" :class="{ 'languges-active': $i18n.locale === 'en' }" @click="selectLang('en')">EN</span>
               <span class="languges" :class="{ 'languges-active': $i18n.locale === 'ru' }" @click="selectLang('ru')">RU</span>
             </div>
-            <a href="https://whitespots.io/security-assessment" target="_blank" class="btn-outline-red pt-1 pb-1">{{ $t('Security Assessment') }}</a>
+            <div v-for="button in assessmentButton">
+              <a :href="button.button_link" target="_blank" class="btn-outline-red pt-1 pb-1">{{ button.button_value }}</a>
+            </div>
           </div>
         </div>
       </div>
@@ -28,8 +30,20 @@
 
 <script>
 import { i18n } from './i18n'
+import * as axios from 'axios'
 
 export default {
+  data() {
+    return {
+      assessmentButton: null,
+    }
+  },
+  mounted () {
+    axios
+      .get(`assessment_button/`)
+      .then(response => (this.assessmentButton = response.data.results))
+      .catch(error => console.log(error))
+  },
   methods: {
     selectLang: function (locale) {
       this.$i18n.locale  = locale

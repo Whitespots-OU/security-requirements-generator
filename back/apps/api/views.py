@@ -6,6 +6,7 @@ from rest_framework.generics import CreateAPIView, RetrieveDestroyAPIView, Retri
 from rest_framework.response import Response
 
 from apps.requirement import models
+from apps.common.models import AssessmentButton
 from apps.requirement.tasks import generate_pdf
 from . import serializers
 
@@ -52,3 +53,8 @@ class ExportRequestRetrieveDestroyView(RetrieveDestroyAPIView):
     def perform_destroy(self, instance: models.ExportRequest):
         os.unlink(instance.file.path)
         instance.delete()
+
+
+class AssessmentButtonViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = AssessmentButton.objects.all()
+    serializer_class = serializers.AssessmentButtonSerializer

@@ -5,6 +5,7 @@ from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register("category", views.CategoryViewSet, basename="category")
+router.register("assessment_button", views.AssessmentButtonViewSet, basename="assessment_button")
 
 urlpatterns = [
     path("export/", views.CreateRequestExportView.as_view(), name="request_export-create"),

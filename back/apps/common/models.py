@@ -3,7 +3,7 @@ from django.utils.translation import gettext as _
 
 from solo.models import SingletonModel
 
-__all__ = ["Config"]
+__all__ = ["Config", "AssessmentButton"]
 
 
 class Config(SingletonModel):
@@ -14,3 +14,14 @@ class Config(SingletonModel):
 
     class Meta:
         verbose_name = _("Site config")
+
+
+class AssessmentButton(SingletonModel):
+    button_value = models.CharField(_("Button value"), max_length=256, default=_("Security assessment"))
+    button_link = models.CharField(_("Button link"), max_length=256, default=_("https://whitespots.io/security-assessment"))
+
+    def __str__(self):
+        return _("Assessment Button")
+
+    class Meta:
+        verbose_name = _("Assessment Button")
