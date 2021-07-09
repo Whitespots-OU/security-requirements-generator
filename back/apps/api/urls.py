@@ -5,6 +5,7 @@ from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register("category", views.CategoryViewSet, basename="category")
+router.register("additional_logo", views.AdditionalLogoViewSet, basename="additional_logo")
 router.register("assessment_button", views.AssessmentButtonViewSet, basename="assessment_button")
 
 urlpatterns = [

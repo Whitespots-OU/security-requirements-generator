@@ -3,7 +3,7 @@ from django.utils.translation import gettext as _
 
 from solo.admin import SingletonModelAdmin
 
-from .models import Config, AssessmentButton
+from .models import Config, AssessmentButton, AdditionalLogo
 
 
 @admin.register(Config)
@@ -17,3 +17,10 @@ class AssessmentButtonAdmin(SingletonModelAdmin):
         (_("Assessment Button Value"), {'fields': ("button_value", )}),
         (_("Assessment Button Link"), {'fields': ("button_link", )}),
     )
+
+
+@admin.register(AdditionalLogo)
+class AdditionalLogoAdmin(admin.ModelAdmin):
+    list_display = ["logo", "enabled"]
+    search_fields = ["logo"]
+    list_editable = ["enabled"]

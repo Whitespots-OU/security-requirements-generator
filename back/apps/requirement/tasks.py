@@ -11,6 +11,7 @@ from django.utils import translation
 
 from apps.common.utils import get_object_or_none
 from apps.requirement.models import ExportRequest, Category, Requirement
+from apps.common.models import AdditionalLogo
 
 __all__ = ["generate_pdf"]
 
@@ -52,7 +53,13 @@ def generate_pdf(uuid: str) -> None:
                     os.mkdir(export_dir)
 
                 template = loader.get_template("export.html")
-                html = template.render({"BASE_URL": settings.BASE_URL, "categories": categories})
+                html = template.render(
+                    {
+                        "BASE_URL": settings.BASE_URL, 
+                        "categories": categories,
+                        "additional_logos": AdditionalLogo.objects.filter(enabled=True).all()
+                    }
+                )
                 f.write(html.encode("utf-8"))
                 f.close()
 

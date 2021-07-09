@@ -1,9 +1,10 @@
 from django.db import models
 from django.utils.translation import gettext as _
+from django.template.defaultfilters import truncatechars
 
 from solo.models import SingletonModel
 
-__all__ = ["Config", "AssessmentButton"]
+__all__ = ["Config", "AssessmentButton", "AdditionalLogo"]
 
 
 class Config(SingletonModel):
@@ -25,3 +26,14 @@ class AssessmentButton(SingletonModel):
 
     class Meta:
         verbose_name = _("Assessment Button")
+
+
+class AdditionalLogo(models.Model):
+    logo = models.ImageField(upload_to='additional_logo')
+    enabled = models.BooleanField(default=False)
+
+    def __str__(self) -> str:
+        return truncatechars(self.logo, 32)
+
+    class Meta:
+        verbose_name = _("Additional logo")

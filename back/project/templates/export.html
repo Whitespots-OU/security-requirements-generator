@@ -19,6 +19,9 @@
                     <div class="logo-title">Whitespots.io</div>
                     <div class="logo-subtitle">{% trans "Security requirements generator" %}</div>
                 </div>
+                {% for additional_logo in additional_logos %}
+                    <img src="{{ BASE_URL }}{{ additional_logo.logo.url }}" class="image" alt="additional_logo">
+                {% endfor %}
             </div>
             <div class="mb-1">
                 <a href="mailto:sales@whitespots.io?subject=SecurityAssessment" class="header-link">sales@whitespots.io</a>
