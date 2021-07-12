@@ -23,16 +23,6 @@
                     </a>
                 </div>
             </div>
-            <div class="d-flex align-items-center mb-1">
-                {% get_current_language as LANGUAGE_CODE %}
-                <div class="mb-1">
-                    <a href="/en"><span class="languges {% if LANGUAGE_CODE == "en" %}languges-active{% endif %}">EN</span></a>
-                    <a href="/ru"><span class="languges {% if LANGUAGE_CODE == "ru" %}languges-active{% endif %}">RU</span></a>
-                </div>
-                <a href="https://whitespots.io/security-assessment" class="btn-outline-red pt-1 pb-1">
-                    {% trans "Security Assessment" %}
-                </a>
-            </div>
         </div>
     </div>
 </header>

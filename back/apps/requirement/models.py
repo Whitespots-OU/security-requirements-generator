@@ -13,6 +13,7 @@ class Category(models.Model):
     name = models.CharField(_("Name"), max_length=128)
     summary = models.TextField(_("Summary"), max_length=1024, help_text=_("Hint at left panel"))
     show_at_home = models.BooleanField(_("Show at home"), default=True)
+    is_default = models.BooleanField(_("Default category"), default=False)
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
     def __str__(self) -> str:
@@ -31,6 +32,7 @@ class Requirement(models.Model):
     summary = models.TextField(_("Summary"), max_length=1024)
     text = models.TextField(_("Text"))
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
+    is_default = models.BooleanField(_("Default requirement"), default=False)
     test_cases = models.ManyToManyField("TestCase", blank=True, verbose_name=_("Test cases"))
 
     def __str__(self) -> str:
