@@ -87,6 +87,7 @@ npm run build
 ## Idea drivers
 - @sarosbacz - Noticed, that requirements are mixed with tests without categories
 - @httpnotonly - Brought everyone together
+- @edgesec
 
 ## Hackers
 - @acrono - Gave us more requirements and tests
