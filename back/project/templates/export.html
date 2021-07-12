@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Whitespots.io</title>
-    <link rel="stylesheet" href="{{ BASE_URL }}{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{{ nginx_addr }}{% static 'css/bootstrap.min.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ BASE_URL }}{% static 'css/print.css' %}">
+    <link rel="stylesheet" href="{{ nginx_addr }}{% static 'css/print.css' %}">
 </head>
 <body>
 <header class="ml-auto mr-auto pr-md-0 pl-md-0">
     <div class="container ">
         <div class="row justify-content-between align-items-center">
             <div class="d-flex align-items-center">
-                <img src="{{ BASE_URL }}{% static 'img/logo.svg' %}" class="logo" alt="logo">
-                <div class="logo-text ">
-                    <div class="logo-title">Whitespots.io</div>
-                    <div class="logo-subtitle">{% trans "Security requirements generator" %}</div>
+                <img src="{{ nginx_addr }}{% static 'img/logo.svg' %}" class="image" alt="logo">
+                <div class="image-text" style="padding-left: 15px;">
+                    <div class="font-weight-bold">Security requirements</div>
+                    <div class="text-secondary">for your service functionality</div>
                 </div>
                 {% for additional_logo in additional_logos %}
-                    <img src="{{ BASE_URL }}{{ additional_logo.logo.url }}" class="image" alt="additional_logo">
+                    <img src="{{ nginx_addr }}{{ additional_logo.logo.url }}" class="image" alt="additional_logo">
                 {% endfor %}
             </div>
             <div class="mb-1">
-                <a href="mailto:sales@whitespots.io?subject=SecurityAssessment" class="header-link">sales@whitespots.io</a>
+                <a href="{{ assessment_button.button_link }}" class="header-link"><h6>{{ assessment_button.button_value }}</h6></a>
             </div>
         </div>
     </div>
