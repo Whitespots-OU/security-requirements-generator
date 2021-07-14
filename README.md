@@ -92,3 +92,4 @@ npm run build
 ## Hackers
 - @acrono - Gave us more requirements and tests
 - @a_ashwarya - Gave us more requirements and tests
+- @W0uldYk1ndlY
