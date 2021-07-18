@@ -65,6 +65,18 @@ export default {
   },
   created() {
     this.loadCategories()
+    
+    if (Array.isArray(this.$route.query.cat)) {
+      let query = []
+      this.$route.query.cat.forEach(cat => query.push(parseInt(cat)))
+      let preset = query.filter(function (cat) { return  cat })
+      preset.forEach(cat => this.selected.push(cat))
+      this.setCategoriesIds(this.selected)
+    }
+    else if (this.$route.query.cat && parseInt(this.$route.query.cat)) {
+      this.selected.push(parseInt(this.$route.query.cat))
+      this.setCategoriesIds(this.selected)
+    }
   },
   methods: {
     ...mapActions(['loadCategories', 'setCategoriesIds']),

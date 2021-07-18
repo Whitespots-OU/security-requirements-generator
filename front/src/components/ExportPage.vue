@@ -1,7 +1,7 @@
 <template>
   <main class="p-0">
     <b-container>
-      <div class="row align-items-center main-row">
+      <div class="row justify-content-between align-items-center main-row">
         <div class="col-fluid p-md-0 px-3">
           <button class="btn d-flex export cta py-md-3 px-md-4" v-if="!isResultSent && !isDone" @click="makeExport">
             {{ $t('Export') }}
@@ -33,6 +33,18 @@
             </div>
           </div>
         </div>
+
+        <button type="button" class="btn float-right btn-outline-red pt-1 pb-1 disabled-message d-none d-md-block" v-if="!URLCreated" @click="createURL">
+          {{ $t('Create a link to these categories') }}
+        </button>
+
+        <button type="button" class="btn float-right btn-outline-blue pt-1 pb-1 d-none d-md-block" v-if="URLCreated && !URLCopied" @click="copyURL">
+          {{ $t('Copy link') }}
+        </button>
+
+        <button type="button" class="btn float-right btn-outline-blue pt-1 pb-1 disabled-message d-none d-md-block" disabled="true" v-if="URLCopied">
+          {{ $t('Link copied to the clipboard') }}
+        </button>
       </div>
 
       <div class="row content-row">
@@ -128,7 +140,10 @@ export default {
       hasError: false,
       isDone: false,
       exportId: null,
-      currentRequirement: {}
+      currentRequirement: {},
+      url: null,
+      URLCreated: false,
+      URLCopied: false
     }
   },
   computed: {
@@ -209,6 +224,18 @@ export default {
       this.isDone = false
       this.isResultSent = false
     },
+    createURL() {
+      let selected_ids = []
+      for (const catId of Object.keys(this.selectedReq))
+        selected_ids.push(catId)
+      let link = '/?cat='.concat(selected_ids.join("&cat="))
+      this.URLCreated = true
+      this.url = window.location.origin.concat(link)
+    },
+    copyURL() {
+      navigator.clipboard.writeText(this.url)
+      this.URLCopied = true
+    }
   },
 }
 </script>

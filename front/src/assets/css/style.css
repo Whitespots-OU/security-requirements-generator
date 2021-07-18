@@ -82,6 +82,25 @@ header .ml-3{
 	text-decoration: none;
 }
 
+.btn-outline-blue{
+	font-family: 'Circe-bold', sans-serif;
+	font-size: 12px;
+	letter-spacing: 0.08em;
+	color: #7873FF;
+	border: 2px solid #7873FF;
+	border-radius: 12px;
+	text-transform: uppercase;
+	padding-right: 13px;
+	padding-left: 14px;
+	margin-left: 59px;
+}
+
+.btn-outline-blue:hover{
+	color: #453FFF;
+	border-color: #453FFF;
+	text-decoration: none;
+}
+
 .main-title{
 	font-size: 72px;
 	color: #172126;
@@ -341,6 +360,12 @@ a.message-title{
 	margin-left: 20px;
 	border-color: #C2C9CC;
 	color: #90979C
+}
+
+.btn-outline-blue.disabled-message{
+	margin-left: 20px;
+	border-color: #7873FF;
+	color: #7873FF
 }
 
 .message-subtitle{
@@ -805,6 +830,11 @@ a.message-title{
 	}
 
 	.btn-outline-red.disabled-message{
+		margin-left: 4px;
+		margin-top: 18px;
+	}
+
+	.btn-outline-blue.disabled-message{
 		margin-left: 4px;
 		margin-top: 18px;
 	}
