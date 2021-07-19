@@ -77,7 +77,7 @@ header .ml-3{
 	text-decoration: none;
 }
 
-.btn-outline-blue{
+.b-btn-outline-blue{
 	font-family: 'Circe-bold', sans-serif;
 	font-size: 12px;
 	letter-spacing: 0.08em;
@@ -90,9 +90,10 @@ header .ml-3{
 	margin-left: 59px;
 }
 
-.btn-outline-blue:hover{
+.b-btn-outline-blue:hover{
 	color: #453FFF;
 	border-color: #453FFF;
+	background-color: #F2F6F7;
 	text-decoration: none;
 }
 
@@ -493,6 +494,11 @@ a.message-title{
 
 .btn:focus{
 	box-shadow: none;
+}
+
+.b-btn-outline-blue:focus, .b-btn-outline-blue:active {
+  outline: none;
+  box-shadow: none;
 }
 
 .modal-content{

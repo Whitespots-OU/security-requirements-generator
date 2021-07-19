@@ -34,17 +34,9 @@
           </div>
         </div>
 
-        <button type="button" class="btn float-right btn-outline-red pt-1 pb-1 disabled-message d-none d-md-block" v-if="!URLCreated" @click="createURL">
-          {{ $t('Create a link to these categories') }}
-        </button>
-
-        <button type="button" class="btn float-right btn-outline-blue pt-1 pb-1 d-none d-md-block" v-if="URLCreated && !URLCopied" @click="copyURL">
-          {{ $t('Copy link') }}
-        </button>
-
-        <button type="button" class="btn float-right btn-outline-blue pt-1 pb-1 disabled-message d-none d-md-block" disabled="true" v-if="URLCopied">
-          {{ $t('Link copied to the clipboard') }}
-        </button>
+        <b-button variant="b-btn-outline-blue" class="btn float-right b-btn-outline-blue pt-1 pb-1 d-none d-md-block" @click="createURL($t('Success!'), $t('Link copied to the clipboard'))">
+          {{ $t('Copy a link to these categories') }}
+        </b-button>
       </div>
 
       <div class="row content-row">
@@ -141,9 +133,7 @@ export default {
       isDone: false,
       exportId: null,
       currentRequirement: {},
-      url: null,
-      URLCreated: false,
-      URLCopied: false
+      url: null
     }
   },
   computed: {
@@ -224,18 +214,20 @@ export default {
       this.isDone = false
       this.isResultSent = false
     },
-    createURL() {
+    createURL(toastTitle, toastBody) {
       let selected_ids = []
       for (const catId of Object.keys(this.selectedReq))
         selected_ids.push(catId)
       let link = '/?cat='.concat(selected_ids.join("&cat="))
-      this.URLCreated = true
       this.url = window.location.origin.concat(link)
-    },
-    copyURL() {
       navigator.clipboard.writeText(this.url)
-      this.URLCopied = true
-    }
+      this.$bvToast.toast(`${toastBody}`, {
+        title: `${toastTitle}`,
+        toaster: `b-toaster-bottom-right`,
+        solid: false,
+        appendToast: true
+      })
+    } 
   },
 }
 </script>
