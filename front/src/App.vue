@@ -22,7 +22,7 @@
               <span class="languges" :class="{ 'languges-active': $i18n.locale === 'en' }" @click="selectLang('en')">EN</span>
               <span class="languges" :class="{ 'languges-active': $i18n.locale === 'ru' }" @click="selectLang('ru')">RU</span>
             </div>
-            <div v-for="button in assessmentButton">
+            <div class="d-none d-md-block" v-for="button in assessmentButton">
               <a :href="button.button_link" target="_blank" class="btn-outline-red pt-1 pb-1">{{ button.button_value }}</a>
             </div>
           </div>

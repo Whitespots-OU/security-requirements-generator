@@ -77,6 +77,26 @@ header .ml-3{
 	text-decoration: none;
 }
 
+.b-btn-outline-blue{
+	font-family: 'Circe-bold', sans-serif;
+	font-size: 12px;
+	letter-spacing: 0.08em;
+	color: #7873FF;
+	border: 2px solid #7873FF;
+	border-radius: 12px;
+	text-transform: uppercase;
+	padding-right: 13px;
+	padding-left: 14px;
+	margin-left: 59px;
+}
+
+.b-btn-outline-blue:hover{
+	color: #453FFF;
+	border-color: #453FFF;
+	background-color: #F2F6F7;
+	text-decoration: none;
+}
+
 .main-title{
 	font-size: 72px;
 	color: #172126;
@@ -334,6 +354,12 @@ a.message-title{
  color: #90979C
 }
 
+.btn-outline-blue.disabled-message{
+	margin-left: 20px;
+	border-color: #7873FF;
+	color: #7873FF
+}
+
 .message-subtitle{
 	font-size: 12px;
 	color: #586066;
@@ -468,6 +494,11 @@ a.message-title{
 
 .btn:focus{
 	box-shadow: none;
+}
+
+.b-btn-outline-blue:focus, .b-btn-outline-blue:active {
+  outline: none;
+  box-shadow: none;
 }
 
 .modal-content{
@@ -779,6 +810,11 @@ a.message-title{
 	}
 
 	.btn-outline-red.disabled-message{
+		margin-left: 4px;
+		margin-top: 18px;
+	}
+
+	.btn-outline-blue.disabled-message{
 		margin-left: 4px;
 		margin-top: 18px;
 	}
