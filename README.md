@@ -103,9 +103,13 @@ Instead, this tool was designed to help small teams to follow the most important
 ## Idea drivers
 - @sarosbacz - Noticed, that requirements are mixed with tests without categories
 - @httpnotonly - Brought everyone together
+
+## Special thanks for working with content
+- @totoshky
 - @edgesec
+- @W0uldYk1ndlY
 
 ## Hackers
 - @acrono - Gave us more requirements and tests
 - @a_ashwarya - Gave us more requirements and tests
-- @W0uldYk1ndlY
+
