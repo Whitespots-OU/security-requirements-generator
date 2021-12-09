@@ -78,6 +78,22 @@ open http://localhost:8080
 npm run build
 ```
 
+# FAQ
+### How to add my own categories (app functions), requirements and tests?
+1. Just visit <your_host>/admin and login to the django admin 
+2. Go to categories/requrements/tests (depends on what do you want to add/edit)
+3. After that execute `docker-compose run back dumpdata`
+It will make a dump of all your current categories, requirements and tests config
+
+### How to contribute categories, requrements, tests?
+This is not going to cover ALL possible requirements, described in full OWASP ASVS.
+Instead, this tool was designed to help small teams to follow the most important and relevant stuff.
+
+1. Before adding something new, try to find the same requirement/test/category in existing data
+2. Feel free to describe existing tests/requirements better
+3. Describe your changes in merge request 
+- Put your changes in a title: New category/New requirements/New tests 
+- Describe in the text which problems have been solved and which have not 
 
 # Contributors
 
