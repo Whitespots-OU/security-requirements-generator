@@ -105,7 +105,7 @@ Instead, this tool was designed to help small teams to follow the most important
 - @httpnotonly - Brought everyone together
 
 ## Special thanks for working with content
-- @totoshky
+- @totoshky - Complexity reduction and refactoring according to recent security trends
 - @edgesec
 - @W0uldYk1ndlY
 
