@@ -87,18 +87,18 @@ main .container{
 	display: inline-block;
 }
 
-.custom-checkbox .custom-control-label::before{
+/*.custom-checkbox .custom-control-label::before{
 	width: 16px;
 	height: 16px;
 	box-shadow: none;
 	border: 1px solid #C2C9CC;
-}
+}*/
 
-.custom-control-input:checked~.custom-control-label::before{
-	background-color: #E34949;
+/*.custom-control-input:checked~.custom-control-label::before{
+	background-color: #49e363;
 	box-shadow: none;
 	border: 1px solid #C2C9CC;
-}
+}*/
 
 .input-title{
 	font-weight: 500;
@@ -113,13 +113,22 @@ main .container{
 }
 
 .tag-imp{
-	background-color: #E34949;
+	background-color: #49e363;
 	font-size: 9px;
 	color: #fff;
 	padding: 6px 11px;
+	margin-right: 10px;
 	border-radius: 12px;
 }
 
+.tag-imp2{
+	background-color: #e36353;
+	font-size: 9px;
+	color: #fff;
+	padding: 6px 11px;
+	margin-right: 10px;
+	border-radius: 12px;
+}
 
 .container{
 	margin-right: 20px;
@@ -133,8 +142,8 @@ main .container{
 		padding-left: 52px;
 	}*/
 
-.important-cont, .main-cont{
-	border: 1.5px solid rgba(227, 73, 73, 0.5);
+/*.important-cont, .main-cont{
+	border: 1.5px solid rgba(73, 151, 53, 0.3);
 	box-sizing: border-box;
 	border-radius: 8px;
 	padding: 6px 12px;
@@ -142,7 +151,7 @@ main .container{
 	padding-right: 10px;
 	margin-left: 6px;
 	margin-bottom: 3px;
-}
+}*/
 
 .main-cont .input-title{
 	margin-top: 2px;

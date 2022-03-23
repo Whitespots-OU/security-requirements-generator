@@ -73,7 +73,7 @@
                         @change="turnSwitcher($event, cat.id, req.id)"
                         :value="req.id"
                         switch>
-                      <span v-b-popover.hover="$t('Make requirement as important or not')">{{ req.title }}</span>
+                      <span v-b-popover.hover="$t('Mark requirement as passed')">{{ req.title }}</span>
                     </b-form-checkbox>
                   </div>
                   <button type="button" class="btn show-btn" v-b-modal="'requirementModal'" @click="loadRequirement(req.id)">

@@ -36,22 +36,22 @@
             <div class="print-title">{{ category.category.name }}</div>
 
             {% for requirement in category.requirements %}
-                <div class="d-flex {% if requirement.id in category.selected_ids %}important-cont{% endif %}">
-                    <div class="custom-control custom-checkbox w-100">
-                        <label class="custom-control-label">
+                <div class="d-flex {% if requirement.id in category.selected_ids %}important-cont{% endif %}" style="break-inside: avoid">
+                    <div class="d-flex w-100">
                             <div class="input-title d-flex align-items-center">
                                 {% if requirement.id in category.selected_ids %}
-                                    <div class="tag-imp ml-auto">{% trans "Important" %}</div>
+                                    <div class="tag-imp ml-auto">{% trans "Passed" %}</div>
+                                {% else %}
+                                    <div class="tag-imp2 ml-auto">{% trans "  Failed  " %}</div>
                                 {% endif %}
                             </div>
-                        </label>
                         <label>
                             <input type="checkbox" class="custom-control-input" name="{{ category.category.id }}checkbox_req_{{ requirement.id }}" id="{{ category.category.id }}checkbox_req_{{ requirement.id }}">
                             {{ requirement.title }}
+                            <a href="{{ BASE_URL }}/{{ LANGUAGE_CODE }}/requirement/{{ requirement.id }}" class="input-link">
+                                ({% trans "full description" %})
+                            </a>
                         </label>
-                        <a href="{{ BASE_URL }}/{{ LANGUAGE_CODE }}/requirement/{{ requirement.id }}" class="input-link">
-                            {% trans "full description" %}
-                        </a>
                     </div>
                 </div>
             {% endfor %}
