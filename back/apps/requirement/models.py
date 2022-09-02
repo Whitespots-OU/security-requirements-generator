@@ -6,7 +6,20 @@ from django.template.defaultfilters import truncatechars
 from django.utils import timezone
 from django.utils.translation import gettext as _
 
-__all__ = ["Category", "Requirement", "TestCase", "ExportRequest"]
+__all__ = ["Category", "Requirement", "TestCase", "ExportRequest", "Product"]
+
+
+class Product(models.Model):
+    name = models.CharField(_("Name"), max_length=128)
+    categories = models.ManyToManyField("Category", verbose_name=_("Category"), blank=True)
+
+    def __str__(self) -> str:
+        return truncatechars(self.name, 32)
+    
+    class Meta:
+        app_label = "requirement"
+        verbose_name = "product"
+        verbose_name_plural = "Products"
 
 
 class Category(models.Model):

@@ -3,3 +3,4 @@ from .requirement import *  # noqa
 from .export_request import *  # noqa
 from .assessment_button import *  # noqa
 from .additional_logo import *  # noqa
+from .product import *  # noqa

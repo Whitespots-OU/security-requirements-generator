@@ -1,17 +1,40 @@
 import os
 
 from django.db import transaction
-from rest_framework import viewsets, status
-from rest_framework.generics import CreateAPIView, RetrieveDestroyAPIView, RetrieveAPIView
+from rest_framework import mixins, status, viewsets
+from rest_framework.exceptions import ValidationError
+from rest_framework.generics import CreateAPIView, RetrieveAPIView, RetrieveDestroyAPIView
 from rest_framework.response import Response
 
+from apps.common.models import AdditionalLogo, AssessmentButton
 from apps.requirement import models
-from apps.common.models import AssessmentButton, AdditionalLogo
 from apps.requirement.tasks import generate_pdf
+
 from . import serializers
 
+__all__ = ["CategoryViewSet", "CreateRequestExportView", "ExportRequestRetrieveDestroyView", "ProductViewSet"]
 
-__all__ = ["CategoryViewSet", "CreateRequestExportView", "ExportRequestRetrieveDestroyView"]
+
+class ProductViewSet(
+    mixins.CreateModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.ListModelMixin,
+    viewsets.GenericViewSet
+):
+    queryset = models.Product.objects.all().order_by("-id")
+    serializer_class = serializers.ProductSerializer
+      
+    def partial_update(self, request, pk=None):
+        product = self.get_object()
+        serializer = serializers.ProductSerializer(product, partial=True)
+        if 'categories' not in request.data:
+            raise ValidationError("You need to add categories")
+
+        product = models.Product.objects.get(id=pk)
+        product.categories.set(request.data["categories"])
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_200_OK, headers=headers)
 
 
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
