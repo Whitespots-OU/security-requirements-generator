@@ -1,6 +1,7 @@
 FROM python:3.9.0-slim-buster
 
 ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED=1
 ENV WORK_DIR "/application/src"
 ENV USER user
 ENV GROUP usergroup

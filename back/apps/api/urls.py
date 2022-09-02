@@ -1,10 +1,11 @@
 from django.urls import path
+from rest_framework.routers import DefaultRouter
 
 from . import views
-from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register("category", views.CategoryViewSet, basename="category")
+router.register("products", views.ProductViewSet, basename="product")
 router.register("additional_logo", views.AdditionalLogoViewSet, basename="additional_logo")
 router.register("assessment_button", views.AssessmentButtonViewSet, basename="assessment_button")
 

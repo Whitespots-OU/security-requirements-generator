@@ -32,6 +32,8 @@ services:
       - media_data:/application/src/media
       - static_data:/application/src/static
       - ./back/project/fixtures:/application/src/project/fixtures
+      - ./back/apps:/application/src/apps
+      - ./back/project:/application/src/project
 
   dramatiq:
     build: ./back/.

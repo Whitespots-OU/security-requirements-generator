@@ -1,14 +1,13 @@
-from django.contrib import admin
-from django.db.models import JSONField
-from django_json_widget.widgets import JSONEditorWidget
-from modeltranslation.admin import TranslationAdmin
 from adminsortable2.admin import SortableAdminMixin
+from django.contrib import admin
 from django.db import models
+from django.db.models import JSONField
 from django.utils.translation import gettext as _
-
+from django_json_widget.widgets import JSONEditorWidget
 from martor.widgets import AdminMartorWidget
+from modeltranslation.admin import TranslationAdmin
 
-from .models import Requirement, Category, TestCase, ExportRequest
+from .models import Category, ExportRequest, Product, Requirement, TestCase
 
 
 class MarkDownMixin:
@@ -22,6 +21,16 @@ class TranslationMedia:
         "modeltranslation/js/tabbed_translation_fields.js",
     )
     css = {"screen": ("modeltranslation/css/tabbed_translation_fields.css",)}
+
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ["name", "product_categories"]
+    search_fields = ["name"]
+
+    def product_categories(self, obj):
+        categories = [cat.name_en for cat in obj.categories.all()]
+        return categories
 
 
 @admin.register(Category)
